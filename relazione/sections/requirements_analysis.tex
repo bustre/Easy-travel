@@ -1,15 +1,30 @@
 \section{Raccolta e analisi dei requisiti}
 \subsection{Proprietà del sistema}
-Nella base di dati sono registrati i dati riguardanti gli utenti che utilizzano il servizio offerto dall'azienda, di ogni utente il sistema conosce:
-\begin{multicols}{2}
-    \begin{itemize}
-        \item Nome
-        \item Cognome
-        \item Codice cliente
-        \item Data di nascita
-        \item Luogo di nascita
-    \end{itemize}
-\end{multicols}
+%
+% Incipit
+%
+Si vuole realizzare una base di dati per un società che permette di confrontare le offerte fornite da diverse agenzie di viaggio, vogliamo rappresentare: gli utenti, gli acquisti, le agenzie, i pacchetti, le recensioni, i posti di soggiorno e i mezzi di trasporto disponibili per il viaggio
+%
+% Utenti
+%
+Gli \textbf{utenti} sono registrati alla piattaforma, sono identificati da un username scelto alla registrazione, inoltre vengono memorizzati per ogni utente: il nome, il cognome, la data di nascita, il luogo di nascita, la password, l'email, il numero di telefono. Gli utenti possono comprare i \textbf{pacchetti} di viaggio, i pacchetti sono forniti dalle \textbf{agenzie di viaggio} e hanno una destinazione una \emph{città} che viene iden, dei \textbf{mezzi di trasporto} per arrivarci,
+%
+% Pacchetti
+%
+Ogni utente può acquistare un o più \textbf{pacchetti}. I pacchetti sono delle soluzioni di viaggio proposte da varie agenzie:
+\subsection{Glossario dei termini}
+\begin{tabularx}{\textwidth}{XXXX}
+    \toprule
+    \textbf{Termine} & \textbf{Descrizione} & \textbf{Sinonimi} & \textbf{Collegamenti} \\
+    \midrule
+    \emph{Utente} & Utente iscritto al servizio. Può: confrontare le diverse offerte dei pacchetti di viaggio, comprare i pacchetti e recensire il viaggio & & Pacchetti, Recensioni
+    \\\midrule
+    \emph{Pacchetti} & Soluzioni di viaggio. Sono offerti da un'agenzia di viaggio & Pacchetti di viaggio & Cliente, Recensioni, Città, Soggiorno, Mezzi
+    \\\midrule
+    \emph{Agenzia di viaggio} & Azienda che offre i pacchetti di viaggio & Agenzia & Pacchetto
+    \\\midrule
+    \bottomrule
+\end{tabularx}
 
-\subsection{Glossario termini}
 \subsection{Operazioni}
+
