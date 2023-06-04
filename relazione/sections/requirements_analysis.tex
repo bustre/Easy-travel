@@ -5,37 +5,46 @@
 %
 Si vuole realizzare una base di dati per un società che permette di confrontare le offerte fornite da diverse agenzie di viaggio, vogliamo rappresentare: gli utenti, gli acquisti, le agenzie, i pacchetti, le recensioni, i posti di alloggio e i mezzi di trasporto disponibili per il viaggio e le città.
 %
-% Utenti
+% Descrizione
 %
-Gli \textbf{utenti} sono registrati alla piattaforma, sono identificati da un username scelto durante la fase di registrazione al servizio, inoltre vengono memorizzati per ogni utente: il nome, il cognome, la data di nascita, il luogo di nascita, la password, l'email, il numero di telefono, la data di iscrizione al servizio e i punti utente (che permettono di offrire un reward per la fedeltà del cliente). %FIXME Questa frase fa schifo rivederla
+Gli \textbf{utenti} sono registrati alla piattaforma, sono identificati da un username scelto durante la fase di registrazione al servizio, inoltre vengono memorizzati per ogni utente: il nome, il cognome, la data di nascita, il luogo di nascita, la password, l'email, il numero di telefono, la data di iscrizione al servizio e i punti utente (che permettono di offrire un premio per la fedeltà del cliente). %FIXME Questa frase fa schifo rivederla
 %
-Gli utenti possono comprare i \textbf{pacchetti} di viaggio forniti dalle \textbf{agenzie di viaggio} identificate nel database attraverso il LEI (un codice internazionale che identifica univocamente le aziende), inoltre viene salvato il nome dell'agenzia e la sua sede legale. Dell'acquisto effettuato dall'utente viene salvato: la data, il numero di minori e il numero totale (minori compresi) di persone che partecipano al viaggio, il numero di punti fedeltà usati per comprare ricevere lo sconto sul prezzo originale.
+Gli utenti possono comprare i \textbf{pacchetti} di viaggio forniti dalle \textbf{agenzie di viaggio} identificate nel database attraverso il LEI (un codice internazionale che identifica univocamente le aziende), inoltre viene salvato il nome dell'agenzia e la sua sede legale. Dell'acquisto effettuato dall'utente viene salvato: la data, il numero di minori e il numero totale (minori compresi) di persone che partecipano al viaggio, il numero di punti fedeltà usati per l'acquisto e quelli ricevuti da ogni acquisto. Un utente non può ricevere punti se fa uso dello sconto.
 %
-I pacchetti vengono identificati da un ID assegnato sempre dall'azienda, i pacchetti hanno: un prezzo (originale), ma possono avere uno \textbf{sconto} in cambio di un certo numero di punti che un utente possiede, una disponibilità (cioè quanti ne sono rimasti di disponibili), la data di partenza e ritorno, e il numero di persone massime che possono partecipare al viaggio.
+I pacchetti vengono identificati da un ID assegnato sempre dall'azienda, i pacchetti hanno: un prezzo (originale), ma possono avere uno \textbf{sconto} in cambio di un certo numero di punti che un utente possiede, una disponibilità (cioè quanti ne sono rimasti di disponibili), la data di partenza e ritorno, il numero di persone massime che possono partecipare al viaggio.
 %
 Il pacchetto ha una \textbf{descrizione} dove troviamo: un titolo, una descrizione testuale e la presenza o meno dell'assicurazione nel pacchetto.
 %
-Ogni pacchetto offre il servizio di \textbf{trasporto} per andare nelle varie destinazioni e per il ritorno. I viaggi di ogni mezzo sono identificati attraverso un ID generato internamente dall'azienda, hanno un orario e data di partenza/arrivo, inoltre per ogni tratta del mezzo c'è il luogo di partenza e arrivo, viene salvato anche il nome dell'azienda che fornisce il mezzo. Per i trasporti via aeroplano e treno viene riporta la classe di viaggio.
+Ogni pacchetto offre il servizio di \textbf{trasporto} per andare nelle varie destinazioni e per il ritorno. I viaggi di ogni mezzo sono identificati attraverso un ID generato internamente dall'azienda, hanno un orario e data di partenza/arrivo, inoltre per ogni tratta che percorre il mezzo c'è il luogo di partenza e arrivo, viene salvato anche il nome dell'azienda che fornisce il mezzo. Per i trasporti via aeroplano e treno viene riporta la classe di viaggio.
 %
 Un pacchetto può avere molteplici destinazione (viaggio con più tappe) oppure solo una (classico), inoltre viene salvato anche gli \textbf{alloggi} che il turista frequenta durante una viaggio, per ogni alloggio viene fornita una \textbf{descrizione} e il numero di stelle, vengono identificati dal nome della struttura e dal luogo in cu si trovano.
 %
-Le destinazioni di un pacchetto, il luogo di partenza/arrivo dei mezzi, i luoghi dove si trovano i soggiorni per il viaggio, la sede legale di un'agenzia è una \textbf{città} che viene identificata dal proprio nome e dal paese in cui si trova, inoltre se disponibile l'informazione viene salvata la regione in cui si trova.
+Le destinazioni di un pacchetto, il luogo di partenza/arrivo dei mezzi, i luoghi dove si trovano i soggiorni per il viaggio, la sede legale di un'agenzia è una \textbf{città} che viene identificata dal proprio nome e dal paese in cui si trova, inoltre se disponibile l'informazione viene salvata la regione in cui si trova. Inoltre ogni luogo di soggiorno ha una descrizione (analoga come i pacchetti).
 %
 L'utente può scrivere delle \textbf{recensioni} per il pacchetto e per i luoghi di soggiorno, le recensioni sono identificate ID interno all'azienda. Nella recensione vengono salvati il numero di stelle e una testo.
 %
-Ogni utente può acquistare un o più \textbf{pacchetti}. I pacchetti sono delle soluzioni di viaggio proposte da varie agenzie:
 \subsection{Glossario dei termini}
-\begin{tabularx}{\textwidth}{XXXX}
+\begin{tabularx}{\textwidth}{p{0.14\textwidth} X p{0.15\textwidth} p{0.18\textwidth}}
     \toprule
     \textbf{Termine} & \textbf{Descrizione} & \textbf{Sinonimi} & \textbf{Collegamenti} \\
     \midrule
-    \emph{Utente} & Utente iscritto al servizio. Può: confrontare le diverse offerte dei pacchetti di viaggio, comprare i pacchetti e recensire il viaggio & & Pacchetti, Recensioni
+    \textbf{Utente} & Utente iscritto al servizio. Può: confrontare le diverse offerte dei pacchetti di viaggio, comprare i pacchetti e recensire il viaggio & & Pacchetti, Recensioni
     \\\midrule
-    \emph{Pacchetti} & Soluzioni di viaggio. Sono offerti da un'agenzia di viaggio & Pacchetti di viaggio & Cliente, Recensioni, Città, Soggiorno, Mezzi
+    \textbf{Pacchetto} & Soluzione di viaggio offerto da un'agenzia di viaggio & Pacchetti di viaggio & Cliente, Recensioni, Città, Soggiorno, Mezzi
     \\\midrule
-    \emph{Agenzia di viaggio} & Agenzia che offre i pacchetti di viaggio & Agenzia & Pacchetto
+    \textbf{Agenzia di viaggio} & Agenzia che offre i pacchetti di viaggio & Agenzia & Pacchetto
     \\\midrule
-    \emph{Azienda} & L'azienda  che offre il servizio e  che ha richiesto lo sviluppo della database & Richiedente &
+    \textbf{Azienda} & Compagnia che offre il servizio e che ha richiesto lo sviluppo della database & Richiedente &
+    \\\midrule
+    \textbf{Recensione} & Giudizio del cliente testuale e mediante una scala di valori & & Soggiorno, Pacchetto
+    \\\midrule
+    \textbf{Descrizione} & Descrizione testuale di un servizio, formata da un titolo e da un testo & & Pacchetto, Soggiorno
+    \\\midrule
+    \textbf{Mezzo} & Mezzo di trasporto che l'agenzia include nel pacchetto per l'andata/ritorno & Mezzo di trasporto, trasporto, servizio di trasporto & Pacchetto, Città
+    \\\midrule
+    \textbf{Alloggio} & Dimora temporanea per il viaggio & & Città, Pacchetto, Descrizione, Recensione
+    \\\midrule
+    \textbf{Sconto} & Sconto applicabile al prezzo originale del pacchetto, può presentare dei requisti per essere applicato & & Pacchetto
     \\
     \bottomrule
 \end{tabularx}
