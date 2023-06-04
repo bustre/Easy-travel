@@ -2,15 +2,15 @@
 \contentsline {section}{\numberline {1}Abstract}{2}{section.1}%
 \contentsline {section}{\numberline {2}Raccolta e analisi dei requisiti}{3}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Proprietà del sistema}{3}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Glossario dei termini}{3}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Operazioni}{3}{subsection.2.3}%
-\contentsline {section}{\numberline {3}Progettazione concettuale}{4}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Lista entità}{4}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Tabella delle relazioni}{4}{subsection.3.2}%
-\contentsline {section}{\numberline {4}Progettazione Logica}{5}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Ristrutturazione}{5}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Analisi ridondanze}{5}{subsubsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.2}ER ristrutturato}{5}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Creazione tabelle}{5}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Querry \& indici}{6}{section.5}%
-\contentsline {section}{\numberline {6}Software C++}{7}{section.6}%
+\contentsline {subsection}{\numberline {2.2}Glossario dei termini}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Operazioni}{4}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Progettazione concettuale}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Lista entità}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Tabella delle relazioni}{5}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Progettazione Logica}{6}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Ristrutturazione}{6}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Analisi ridondanze}{6}{subsubsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.2}ER ristrutturato}{6}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Creazione tabelle}{6}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Querry \& indici}{7}{section.5}%
+\contentsline {section}{\numberline {6}Software C++}{8}{section.6}%
