@@ -4,13 +4,13 @@
 \contentsline {subsection}{\numberline {2.1}Proprietà del sistema}{3}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Glossario dei termini}{4}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Operazioni}{4}{subsection.2.3}%
-\contentsline {section}{\numberline {3}Progettazione concettuale}{5}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Lista entità}{5}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Tabella delle relazioni}{5}{subsection.3.2}%
-\contentsline {section}{\numberline {4}Progettazione Logica}{6}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Ristrutturazione}{6}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Analisi ridondanze}{6}{subsubsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.2}ER ristrutturato}{6}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Creazione tabelle}{6}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Querry \& indici}{7}{section.5}%
-\contentsline {section}{\numberline {6}Software C++}{8}{section.6}%
+\contentsline {section}{\numberline {3}Progettazione concettuale}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Lista entità}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Tabella delle relazioni}{6}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Progettazione Logica}{7}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Ristrutturazione}{7}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Analisi ridondanze}{7}{subsubsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.2}ER ristrutturato}{7}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Creazione tabelle}{7}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Querry \& indici}{8}{section.5}%
+\contentsline {section}{\numberline {6}Software C++}{9}{section.6}%
