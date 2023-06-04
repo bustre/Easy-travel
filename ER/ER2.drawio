@@ -1,12 +1,6 @@
-<<<<<<< HEAD:ER/ER2.drawio
 <mxfile host="Electron" modified="2023-06-04T15:01:10.494Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.2.8 Chrome/112.0.5615.165 Electron/24.2.0 Safari/537.36" etag="-jbx-XVTmoGthJO43kgx" version="21.2.8" type="device">
   <diagram name="Pagina-1" id="XnK0lcYDc5IUlMdxf0PO">
     <mxGraphModel dx="2026" dy="654" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
-=======
-<mxfile host="Electron" modified="2023-06-04T08:30:33.902Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.2.8 Chrome/112.0.5615.165 Electron/24.2.0 Safari/537.36" etag="vDsKBJ5b06TyNzwNinTU" version="21.2.8" type="device">
-  <diagram name="Pagina-1" id="XnK0lcYDc5IUlMdxf0PO">
-    <mxGraphModel dx="1707" dy="531" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
->>>>>>> 253dc024d9e816297edc670c83c544a523761826:ER/ER.drawio
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -706,8 +700,14 @@
             <mxPoint x="-342.99999999996953" y="153.38" as="targetPoint" />
           </mxGeometry>
         </mxCell>
+        <mxCell id="2xYNTSdYT9VJO8_f8z8V-71" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-338" y="173.38" as="sourcePoint" />
+            <mxPoint x="-338" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
         <mxCell id="2xYNTSdYT9VJO8_f8z8V-72" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#000000;" parent="1" vertex="1">
-          <mxGeometry x="-180" y="173.38" width="10" height="10" as="geometry" />
+          <mxGeometry x="-343" y="173.38" width="10" height="10" as="geometry" />
         </mxCell>
         <mxCell id="2xYNTSdYT9VJO8_f8z8V-74" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" parent="1" source="2xYNTSdYT9VJO8_f8z8V-56" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -903,17 +903,10 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="TWF37zT2_m8UbWFvrmiI-16" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-<<<<<<< HEAD:ER/ER2.drawio
           <mxGeometry x="-245" y="920" width="10" height="10" as="geometry" />
         </mxCell>
         <mxCell id="TWF37zT2_m8UbWFvrmiI-17" value="Classe" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="-270.38" y="930" width="60" height="30" as="geometry" />
-=======
-          <mxGeometry x="115" y="890" width="10" height="10" as="geometry" />
-        </mxCell>
-        <mxCell id="TWF37zT2_m8UbWFvrmiI-17" value="Classe" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="89.62" y="900" width="60" height="30" as="geometry" />
->>>>>>> 253dc024d9e816297edc670c83c544a523761826:ER/ER.drawio
         </mxCell>
         <mxCell id="TWF37zT2_m8UbWFvrmiI-18" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="TWF37zT2_m8UbWFvrmiI-19" target="N57df3obNBDMimQM0vPs-5" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -922,17 +915,10 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="TWF37zT2_m8UbWFvrmiI-19" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-<<<<<<< HEAD:ER/ER2.drawio
           <mxGeometry x="-155.24" y="920" width="10" height="10" as="geometry" />
         </mxCell>
         <mxCell id="TWF37zT2_m8UbWFvrmiI-20" value="Classe" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="-180.62" y="930" width="60" height="30" as="geometry" />
-=======
-          <mxGeometry x="204.76" y="890" width="10" height="10" as="geometry" />
-        </mxCell>
-        <mxCell id="TWF37zT2_m8UbWFvrmiI-20" value="Classe" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="179.38" y="900" width="60" height="30" as="geometry" />
->>>>>>> 253dc024d9e816297edc670c83c544a523761826:ER/ER.drawio
         </mxCell>
         <mxCell id="TWF37zT2_m8UbWFvrmiI-21" value="" style="endArrow=none;html=1;rounded=0;entryX=0.735;entryY=0.991;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0;exitDx=0;exitDy=0;" parent="1" source="TWF37zT2_m8UbWFvrmiI-22" target="2xYNTSdYT9VJO8_f8z8V-28" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -941,17 +927,10 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="TWF37zT2_m8UbWFvrmiI-22" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-<<<<<<< HEAD:ER/ER2.drawio
           <mxGeometry x="-473" y="448" width="10" height="10" as="geometry" />
         </mxCell>
         <mxCell id="TWF37zT2_m8UbWFvrmiI-23" value="Data Iscrizione" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="-518" y="452.76" width="100" height="30" as="geometry" />
-=======
-          <mxGeometry x="-463" y="448" width="10" height="10" as="geometry" />
-        </mxCell>
-        <mxCell id="TWF37zT2_m8UbWFvrmiI-23" value="Data Iscrizione" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="-508" y="452.76" width="100" height="30" as="geometry" />
->>>>>>> 253dc024d9e816297edc670c83c544a523761826:ER/ER.drawio
         </mxCell>
         <mxCell id="TWF37zT2_m8UbWFvrmiI-25" value="(1,1)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="-158" y="244.12" width="50" height="30" as="geometry" />
@@ -959,7 +938,6 @@
         <mxCell id="TWF37zT2_m8UbWFvrmiI-26" value="(0,N)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="-85" y="228" width="50" height="30" as="geometry" />
         </mxCell>
-<<<<<<< HEAD:ER/ER2.drawio
         <mxCell id="ORQm8XDdudMeTBHYUx_8-1" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
           <mxGeometry x="-408" y="373.38" width="10" height="10" as="geometry" />
         </mxCell>
@@ -1151,34 +1129,6 @@
         </mxCell>
         <mxCell id="ORQm8XDdudMeTBHYUx_8-68" value="(0,N)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="274" y="19" width="45" height="26" as="geometry" />
-=======
-        <mxCell id="gj9OVmdKScO_JK06Qzg_-1" value="Punti &lt;br&gt;necessari" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="146.99999999999997" y="165" width="70" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="gj9OVmdKScO_JK06Qzg_-2" value="" style="endArrow=none;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="gj9OVmdKScO_JK06Qzg_-3" target="2xYNTSdYT9VJO8_f8z8V-28">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="-405" y="418.62" as="sourcePoint" />
-            <mxPoint x="-425" y="381.62" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="gj9OVmdKScO_JK06Qzg_-3" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
-          <mxGeometry x="-408" y="416.62" width="10" height="10" as="geometry" />
-        </mxCell>
-        <mxCell id="gj9OVmdKScO_JK06Qzg_-4" value="Punti" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="-428" y="421.38" width="50" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="gj9OVmdKScO_JK06Qzg_-5" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="2xYNTSdYT9VJO8_f8z8V-56" target="gj9OVmdKScO_JK06Qzg_-6">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="-207" y="543.76" as="sourcePoint" />
-            <mxPoint x="-229.96446609406735" y="521.2955339059326" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="gj9OVmdKScO_JK06Qzg_-6" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
-          <mxGeometry x="-238.5" y="512.76" width="10" height="10" as="geometry" />
-        </mxCell>
-        <mxCell id="gj9OVmdKScO_JK06Qzg_-7" value="Punti utilizzati" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="-280" y="488.76" width="100" height="30" as="geometry" />
->>>>>>> 253dc024d9e816297edc670c83c544a523761826:ER/ER.drawio
         </mxCell>
       </root>
     </mxGraphModel>
