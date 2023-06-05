@@ -5,8 +5,9 @@
 \contentsline {subsection}{\numberline {2.2}Glossario dei termini}{4}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Operazioni}{4}{subsection.2.3}%
 \contentsline {section}{\numberline {3}Progettazione concettuale}{6}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Lista entità}{6}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Tabella delle relazioni}{6}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.1}ER}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Elenco delle entità}{6}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Elenco delle relazioni}{6}{subsection.3.3}%
 \contentsline {section}{\numberline {4}Progettazione Logica}{7}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Ristrutturazione}{7}{subsection.4.1}%
 \contentsline {subsubsection}{\numberline {4.1.1}Analisi ridondanze}{7}{subsubsection.4.1.1}%
