@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.4.30)  7 JUN 2023 09:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.4.30)  7 JUN 2023 09:46
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -641,6 +641,9 @@ Package: subfiles 2020/11/14 v2.2 Multi-file projects (package)
 (/usr/share/texlive/texmf-dist/tex/latex/import/import.sty
 Package: import 2020/04/01  v 6.2
 ))
+(/usr/share/texlive/texmf-dist/tex/latex/ltablex/ltablex.sty
+Package: ltablex 2014/08/13 v1.1 Modified tabularx
+
 (/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
 \LTleft=\skip68
@@ -660,8 +663,8 @@ Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
 \c@LT@chunks=\count324
 \LT@p@ftn=\toks30
 )
-Class scrartcl Info: longtable captions redefined on input line 22.
-
+Class scrartcl Info: longtable captions redefined on input line 143.
+)
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-10-26 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count325
@@ -670,35 +673,35 @@ File: l3backend-pdftex.def 2022-10-26 L3 backend support: PDF output (pdfTeX)
 (./relazione.aux)
 \openout1 = `relazione.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-Package scrbase Info: activating english \abstractname on input line 32.
-Package scrbase Info: activating english \partname on input line 32.
-Package scrbase Info: activating english \figurename on input line 32.
-Package scrbase Info: activating english \tablename on input line 32.
-Package scrbase Info: activating english \contentsname on input line 32.
-Package scrbase Info: activating english \listfigurename on input line 32.
-Package scrbase Info: activating english \listtablename on input line 32.
-Package scrbase Info: activating english \refname on input line 32.
-Package scrbase Info: activating english \indexname on input line 32.
-LaTeX Info: Redefining \it@ocap on input line 32.
-LaTeX Info: Redefining \it@ccap on input line 32.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+Package scrbase Info: activating english \abstractname on input line 33.
+Package scrbase Info: activating english \partname on input line 33.
+Package scrbase Info: activating english \figurename on input line 33.
+Package scrbase Info: activating english \tablename on input line 33.
+Package scrbase Info: activating english \contentsname on input line 33.
+Package scrbase Info: activating english \listfigurename on input line 33.
+Package scrbase Info: activating english \listtablename on input line 33.
+Package scrbase Info: activating english \refname on input line 33.
+Package scrbase Info: activating english \indexname on input line 33.
+LaTeX Info: Redefining \it@ocap on input line 33.
+LaTeX Info: Redefining \it@ccap on input line 33.
 \c@lstlisting=\count326
 
 (/usr/share/texlive/texmf-dist/tex/latex/translations/translations-basic-dictio
@@ -707,9 +710,9 @@ File: translations-basic-dictionary-english.trsl (english translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 32.
+or `english'. on input line 33.
 Package translations Info: no dictionary file `translations-basic-dictionary-it
-alian.trsl' found. on input line 32.
+alian.trsl' found. on input line 33.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -733,7 +736,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 32.
+Package hyperref Info: Link coloring ON on input line 33.
 
 (./relazione.out) (./relazione.out)
 \@outlinefile=\write4
@@ -746,7 +749,7 @@ Class scrartcl Info: loading recommended package `bookmark'.
 (scrartcl)           `bookmarkpackage=false' before \begin{document} and
 (scrartcl)           you can avoid this message adding:
 (scrartcl)             \usepackage{bookmark}
-(scrartcl)           before \begin{document} on input line 32.
+(scrartcl)           before \begin{document} on input line 33.
 
 (/usr/share/texlive/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
@@ -756,15 +759,15 @@ File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
 \BKM@id=\count333
 ))
 LaTeX Font Info:    Trying to load font information for T1+cmss on input line 3
-4.
+5.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 34.
+(Font)              <14.4> on input line 35.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 34.
+(Font)              <7> on input line 35.
  (./relazione.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 4.
@@ -785,18 +788,18 @@ File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
 (Font)              Font shape `T1/cmtt/m/n' tried instead on input line 8.
 )
-Overfull \hbox (1.77147pt too wide) in paragraph at lines 8--37
+Overfull \hbox (1.77147pt too wide) in paragraph at lines 8--38
 [] \T1/cmtt/m/n/10 DA RISCRIVERE & Riportare solo la metodologia e cosa si sta 
 per leggere 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8--37
+Underfull \hbox (badness 10000) in paragraph at lines 8--38
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8--37
+Underfull \hbox (badness 10000) in paragraph at lines 8--38
 
  []
 
@@ -811,164 +814,169 @@ Overfull \hbox (0.68481pt too wide) in paragraph at lines 49--50
  []
 
 [3]
-Underfull \hbox (badness 1629) in paragraph at lines 112--112
-[]|\T1/cmr/m/n/10 Pacchetti, Re-
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
+[]|\T1/cmr/m/n/10 Pacchetti,
  []
 
 
-Underfull \hbox (badness 1062) in paragraph at lines 112--112
-[]|\T1/cmr/m/n/10 Pacchetti di
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
+\T1/cmr/m/n/10 Re-cen-sioni,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 112--112
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
 []|\T1/cmr/m/n/10 Cliente, Re-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 112--112
-\T1/cmr/m/n/10 Sog-giorno,
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
+\T1/cmr/m/n/10 cen-sioni,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 112--112
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
+\T1/cmr/m/n/10 Città, Sog-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
 []|\T1/cmr/bx/n/10 Prenota-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 112--112
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
 []|\T1/cmr/m/n/10 Acquisto,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 112--112
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
 []|\T1/cmr/m/n/10 Cliente, Pac-
  []
 
 
-Underfull \hbox (badness 5787) in paragraph at lines 112--112
+Underfull \hbox (badness 5787) in paragraph at lines 118--118
 []|\T1/cmr/m/n/10 Mezzo, Città,
  []
 
 
-Underfull \hbox (badness 3623) in paragraph at lines 112--112
+Underfull \hbox (badness 3623) in paragraph at lines 118--118
 []|\T1/cmr/bx/n/10 Agenzia di
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 112--112
-[]|\T1/cmr/m/n/10 Soggiorno,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 112--112
-[]|\T1/cmr/m/n/10 Descrizione tes-tuale di un
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 112--112
-\T1/cmr/m/n/10 in-clude nel pac-chetto per
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 112--112
-[]|\T1/cmr/m/n/10 Mezzo di
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 112--112
-\T1/cmr/m/n/10 trasporto,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 112--112
-\T1/cmr/m/n/10 trasporto,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 112--112
-\T1/cmr/m/n/10 servizio di
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 112--112
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
 []|\T1/cmr/m/n/10 Pacchetto,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 112--112
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
+[]|\T1/cmr/m/n/10 Soggiorno,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
+[]|\T1/cmr/m/n/10 Descrizione tes-tuale di un
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
+\T1/cmr/m/n/10 in-clude nel pac-chetto per
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
+[]|\T1/cmr/m/n/10 Mezzo di
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
+\T1/cmr/m/n/10 trasporto,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
+\T1/cmr/m/n/10 trasporto,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
+\T1/cmr/m/n/10 servizio di
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
 []|\T1/cmr/m/n/10 Città, Pac-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 112--112
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
 \T1/cmr/m/n/10 chetto, De-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 112--112
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
 \T1/cmr/m/n/10 scrizione,
  []
 
 
-Underfull \hbox (badness 1571) in paragraph at lines 112--112
+Underfull \hbox (badness 1571) in paragraph at lines 118--118
 \T1/cmr/m/n/10 i-nale del pac-chetto, può pre-
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 141--141
+Underfull \hbox (badness 10000) in paragraph at lines 122--124
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 152--152
 []|\T1/cmr/bx/n/10 Numero op-er-azioni
  []
 
 
-Underfull \hbox (badness 4752) in paragraph at lines 141--141
+Underfull \hbox (badness 4752) in paragraph at lines 152--152
 []|\T1/cmr/m/it/10 Inserimento de-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 141--141
+Underfull \hbox (badness 10000) in paragraph at lines 152--152
 []|\T1/cmr/m/it/10 Inserimento
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 141--141
+Underfull \hbox (badness 10000) in paragraph at lines 152--152
 []|\T1/cmr/m/it/10 Inserimento
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 141--141
+Underfull \hbox (badness 10000) in paragraph at lines 152--152
 []|\T1/cmr/m/it/10 Inserimento
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 141--141
+Underfull \hbox (badness 10000) in paragraph at lines 152--152
 []|\T1/cmr/m/it/10 Inserimento
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 141--141
+Underfull \hbox (badness 10000) in paragraph at lines 152--152
 []|\T1/cmr/m/it/10 Inserimento
  []
 
-)
-Underfull \hbox (badness 10000) in paragraph at lines 115--39
-
- []
-
-[5] [6] (./sections/conceptual_desing.tex) [7] (./sections/logical_desing.tex)
+[5]) [6] (./sections/conceptual_desing.tex) [7] (./sections/logical_desing.tex)
 [8] (./section/querry_index.tex) [9] (./section/application.tex) [10]
 (./relazione.aux)
 Package rerunfilecheck Info: File `relazione.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 20673 strings out of 476182
- 420099 string characters out of 5796604
- 1868793 words of memory out of 6000000
- 40628 multiletter control sequences out of 15000+600000
+ 20711 strings out of 476182
+ 420965 string characters out of 5796604
+ 1875793 words of memory out of 6000000
+ 40660 multiletter control sequences out of 15000+600000
  524799 words of font info for 55 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
- 108i,9n,106p,10604b,1038s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,8n,106p,10604b,1266s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr
 /share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share
 /texlive/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texliv
@@ -982,10 +990,10 @@ fsx1200.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfsx1440
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfsx2074.pfb></
 usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on relazione.pdf (10 pages, 250940 bytes).
+Output written on relazione.pdf (10 pages, 251736 bytes).
 PDF statistics:
- 211 PDF objects out of 1000 (max. 8388607)
- 172 compressed objects within 2 object streams
- 30 named destinations out of 1000 (max. 500000)
+ 214 PDF objects out of 1000 (max. 8388607)
+ 175 compressed objects within 2 object streams
+ 32 named destinations out of 1000 (max. 500000)
  141 words of extra memory for PDF output out of 10000 (max. 10000000)
 
