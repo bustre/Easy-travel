@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.4.30)  7 JUN 2023 09:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.4.30)  7 JUN 2023 10:09
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -929,38 +929,48 @@ Underfull \hbox (badness 10000) in paragraph at lines 122--124
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 152--152
-[]|\T1/cmr/bx/n/10 Numero op-er-azioni
- []
-
-
-Underfull \hbox (badness 4752) in paragraph at lines 152--152
+Underfull \hbox (badness 4752) in paragraph at lines 160--160
 []|\T1/cmr/m/it/10 Inserimento de-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 152--152
+Underfull \hbox (badness 10000) in paragraph at lines 160--160
 []|\T1/cmr/m/it/10 Inserimento
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 152--152
+Underfull \hbox (badness 10000) in paragraph at lines 160--160
 []|\T1/cmr/m/it/10 Inserimento
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 152--152
+Underfull \hbox (badness 10000) in paragraph at lines 160--160
 []|\T1/cmr/m/it/10 Inserimento
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 152--152
+Underfull \hbox (badness 10000) in paragraph at lines 160--160
 []|\T1/cmr/m/it/10 Inserimento
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 152--152
+Underfull \hbox (badness 10000) in paragraph at lines 160--160
 []|\T1/cmr/m/it/10 Inserimento
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--160
+[]|\T1/cmr/m/it/10 Acquisto pac-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--160
+[]|\T1/cmr/m/it/10 Visualizzazione
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--160
+[]|\T1/cmr/m/it/10 Visualizzazione
  []
 
 [5]) [6] (./sections/conceptual_desing.tex) [7] (./sections/logical_desing.tex)
@@ -970,30 +980,35 @@ Package rerunfilecheck Info: File `relazione.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 20711 strings out of 476182
- 420965 string characters out of 5796604
- 1875793 words of memory out of 6000000
- 40660 multiletter control sequences out of 15000+600000
- 524799 words of font info for 55 fonts, out of 8000000 for 9000
+ 20717 strings out of 476182
+ 421033 string characters out of 5796604
+ 1877793 words of memory out of 6000000
+ 40663 multiletter control sequences out of 15000+600000
+ 525915 words of font info for 57 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
- 108i,8n,106p,10604b,1266s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr
-/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share
-/texlive/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/cm-super/sfrm0800.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/cm-super/sfrm1000.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/cm-super/sfrm1440.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-
-super/sfsx1000.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/s
-fsx1200.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfsx1440
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfsx2074.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on relazione.pdf (10 pages, 251736 bytes).
+ 108i,13n,106p,10604b,1266s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exist
+, replaced by a fixed one
+
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/s
+hare/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/t
+exlive/texmf-dist/fonts/type1/public/cm-super/sfbx0800.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/cm-super/sfrm0700.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/cm-super/sfrm0800.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/cm-super/sfrm1000.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-su
+per/sfrm1440.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfs
+x1000.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfsx1200.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfsx2074.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
+Output written on relazione.pdf (10 pages, 293838 bytes).
 PDF statistics:
- 214 PDF objects out of 1000 (max. 8388607)
- 175 compressed objects within 2 object streams
- 32 named destinations out of 1000 (max. 500000)
+ 227 PDF objects out of 1000 (max. 8388607)
+ 182 compressed objects within 2 object streams
+ 33 named destinations out of 1000 (max. 500000)
  141 words of extra memory for PDF output out of 10000 (max. 10000000)
 

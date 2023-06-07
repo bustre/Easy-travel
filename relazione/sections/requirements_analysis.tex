@@ -119,35 +119,43 @@ Il pacchetto e l'alloggio ha una \textbf{descrizione}, identificata univocamente
 \end{center}
 
 \subsection{Operazioni}
-Nel caso d'uso perso in esame il numero di operazioni effettuate non hanno una distribuzione uniforme durante l'anno, ma alcune operazioni in particolare presentano un numero di richieste maggiore durante i periodi di vacanza, cioè durante i periodi di massimo carico per il sistema, mentre di richieste minori durante periodi di lavoro. Le operazioni sono riporta in seguito:
+Nel caso d'uso perso in esame il numero di operazioni effettuate non hanno una distribuzione uniforme durante l'anno, ma alcune operazioni in particolare presentano un numero di richieste maggiore durante i periodi di vacanza, cioè durante i periodi di \emph{massimo carico} per il sistema, mentre in altri periodi ci sono momenti di \emph{idle}. Riportiamo di seguito le operazioni considerando il massimo di operazioni registrare per un certo periodo, dato che in contesti come questi la priorità è che il sistema riesca a soddisfare tutte le richieste.
 \newline
 \begin{center}
-    \begin{tabularx}{\textwidth}{p{0.2\textwidth} | X p{0.3\textwidth}}
+    \begin{tabularx}{\textwidth}{p{0.2\textwidth} X p{0.3\textwidth}}
         \caption{Tabella delle operazioni}\\\toprule\endfirsthead
         \toprule\endhead
         \midrule\multicolumn{3}{r}{\itshape Continua nella pagina successiva}\\\midrule\endfoot
         \bottomrule\endlastfoot
         %
         %
-        \textbf{Operazione} & \textbf{Descrizione dell'operazione} & \textbf{Numero operazioni operazione/tempo}
+        \textbf{Operazione} & \textbf{Descrizione dell'operazione} & \textbf{N°. operazioni}
+        \\
+        && (\textbf{operazioni/tempo})\footnote{Riportiamo misure di tempo: \textbf{dd} = giorni, \textbf{mm} = mesi \& \textbf{yy} = anni.}
         \\\midrule
-        \emph{Inserimento pacchetto} & Inserimento di un pacchetto da parte di una agenzia & 10 o/gg
+        \emph{Inserimento pacchetto} & Inserimento di un pacchetto da parte di una agenzia & 10 o/dd
         \\\midrule
-        \emph{Inserimento descrizione} & Inserimento di una descrizione per un pacchetto o per un luogo di soggiorno & 15 o/gg
+        \emph{Inserimento descrizione} & Inserimento di una descrizione per un pacchetto o per un luogo di soggiorno & 15 o/dd
         \\\midrule
         \emph{Inserimento mezzo} & Inserimento nuovo mezzo per un viaggio & 2 o/mm
         \\\midrule
-        \emph{Iscrizione utente} & Un utente si iscrive al servizio & 40 o/mm
+        \emph{Iscrizione utente} & Un utente si iscrive al servizio & 40 o/dd
         \\\midrule
         \emph{Inserimento recensione} & Un utente aggiunge una recensione & 3.000 o/mm
         \\\midrule
-        \emph{Ricerca pacchetti} & Ricerca dei pacchetti da parte degli utenti & 300.000 o/gg
+        \emph{Ricerca pacchetti} & Ricerca dei pacchetti da parte degli utenti & 600.000 o/dd
         \\\midrule
         \emph{Inserimento agenzia} & Viene aggiunta una nuova agenzia & 3 o/mm
         \\\midrule
-        \emph{Inserimento città} & Viene aggiunta una nuova città & 5 o/mm
+        \emph{Inserimento città} & Viene aggiunta una nuova città & 10 o/yy
         \\\midrule
-        \emph{Inserimento sconto} & Inserimento di un nuovo sconto & 100 o/gg
+        \emph{Inserimento sconto} & Inserimento di un nuovo sconto & 8 o/dd
+        \\\midrule
+        \emph{Acquisto pacchetto} & Un cliente acquista un pacchetto & 100.000 o/gg
+        \\\midrule
+        \emph{Visualizzazione degli acquisti} & Un cliente vuole visualizzare gli acquisti passati & 90 o/gg
+        \\\midrule
+        \emph{Visualizzazione dei punti} & Un cliente vuole vedere i punti a sua disposizione & 1.600 o/gg
         \\
     \end{tabularx}
 \end{center}
