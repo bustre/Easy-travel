@@ -8,11 +8,11 @@
 \contentsline {subsection}{\numberline {3.1}ER}{7}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Elenco delle entità}{7}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Elenco delle relazioni}{7}{subsection.3.3}%
-\contentsline {section}{\numberline {4}Progettazione Logica}{8}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Ristrutturazione}{8}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Analisi ridondanze}{8}{subsubsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.2}ER ristrutturato}{8}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Creazione tabelle}{8}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Querry \& indici}{9}{section.5}%
-\contentsline {section}{\numberline {6}Software C++}{10}{section.6}%
+\contentsline {section}{\numberline {4}Progettazione Logica}{9}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Ristrutturazione}{9}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Analisi ridondanze}{9}{subsubsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.2}ER ristrutturato}{9}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Creazione tabelle}{9}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Querry \& indici}{10}{section.5}%
+\contentsline {section}{\numberline {6}Software C++}{11}{section.6}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
