@@ -4,22 +4,65 @@
 % Incipit
 %
 Si vuole realizzare una base di dati per un società che permette di confrontare le offerte fornite da diverse agenzie di viaggio, si vuole rappresentare: gli utenti, gli acquisti, le agenzie, i pacchetti, le recensioni, gli alloggi, i mezzi di trasporto, le tratte che percorrono i mezzi e le città.
+
 %
 % Utenti
 %
-Gli \textbf{utenti} sono registrati alla piattaforma, sono identificati da un username scelto durante la fase di registrazione al servizio, inoltre vengono memorizzati per ogni utente: il nome, il cognome, la data di nascita, il luogo di nascita, la password, l'email, il numero di telefono, la data di iscrizione al servizio e i punti fedeltà (che permettono di offrire un sconto per la fedeltà del cliente).
+Gli \textbf{utenti} sono registrati alla piattaforma, sono identificati da un username scelto durante la fase di registrazione al servizio, inoltre vengono memorizzati per ogni utente:
+\begin{multicols}{2}
+\begin{itemize}
+    \item nome;
+    \item cognome;
+    \item data di nascita;
+    \item luogo di nascita;
+    \item password (in sha256);
+    \item l'email;
+    \item numero di telefono;
+    \item data di iscrizione al servizio;
+    \item i punti fedeltà.
+\end{itemize}
+\end{multicols}
 %
 % Cliente -> Acquisti
 %
-Gli utenti possono prenotare i \textbf{pacchetti} di viaggio forniti dalle \textbf{agenzie di viaggio} identificate nel database attraverso il LEI (un codice internazionale che identifica univocamente le aziende), inoltre viene salvato il nome dell'agenzia e la sua sede legale. Di ogni acquisto effettuato dall'utente viene salvato: la data, il numero di minori e il numero totale (minori compresi) di persone che partecipano al viaggio, il numero di punti fedeltà usati per l'acquisto e quelli ricevuti da ogni acquisto. Un utente non può ricevere punti se fa uso dello sconto.
+Gli utenti possono prenotare i \textbf{pacchetti} di viaggio forniti dalle \textbf{agenzie di viaggio} identificate nel database attraverso il LEI (un codice internazionale che identifica univocamente le aziende), inoltre viene salvato il nome dell'agenzia e la sua sede legale. Di ogni acquisto effettuato dall'utente viene salvato:
+\begin{multicols}{2}
+    \begin{itemize}
+        \item data;
+        \item numero di minori che partecipano al viaggio;
+        \item numero totale (minori compresi) di persone che partecipano al viaggio;
+        \item numero di punti fedeltà (usati per l'acquisto e quelli ricevuti da ogni acquisto).
+     \end{itemize}
+ \end{multicols}
+ Un utente non può ricevere punti se fa uso dello sconto.
 %
 % Pacchetti
 %
-I pacchetti vengono identificati da un ID assegnato sempre dal richiedente, i pacchetti hanno: un prezzo, ma possono avere uno \textbf{sconto} in cambio di un certo numero di punti che un utente possiede, una disponibilità (cioè quanti posti sono rimasti di disponibili), la data di partenza e ritorno, il numero di persone massime che possono partecipare al viaggio, inoltre viene riportato se è presente l'assicurazione per il viaggio.
+I pacchetti vengono identificati da un ID assegnato sempre dal richiedente, i pacchetti hanno:
+\begin{multicols}{2}
+    \begin{itemize}
+        \item prezzo\footnote{Originale, senza nessuno sconto.};
+        \item disponibilità (posti disponibili per il viaggio);
+        \item data di partenza e ritorno;
+        \item numero di persone massime che possono partecipare al viaggio%
+        \footnote{Ovvero un cliente può acquistare un viaggio per 3 persone solo se il pacchetto lo prevede.};
+        \item la presenza o meno dell'assicurazione per il viaggio.
+    \end{itemize}
+ \end{multicols}
+Inoltre i pacchetti possono avere uno \textbf{sconto} in cambio di un certo numero di punti che un utente possiede.
 %
 % Trasporto & tratte
 %
-Ogni pacchetto offre il servizio di \textbf{trasporto} per andare nelle varie destinazioni e per il ritorno. Per arrivare a destinazione o per il ritorno potrebbe essere necessario prendere più mezzi, ognuno dei quali percorre una \textbf{tratta}. I mezzi sono identificati attraverso l'azienda che mette a disposizione il veicolo e il codice mezzo utilizzato dall'azienda, essi si dividono in: autobus, aeroplano, treno e nave, per il treno, taxi e l'aeroplano viene riportata anche la classe. Le tratte sono identificate dal ID del pacchetto a cui si riferiscono, ogni tratta tiene le seguente informazioni: il mezzo utilizzato per la tratta, l'orario e la data di partenza/arrivo, il luogo di partenza e arrivo.
+Ogni pacchetto offre il servizio di \textbf{trasporto} per andare nelle varie destinazioni e per il ritorno. Per arrivare a destinazione o per il ritorno potrebbe essere necessario prendere più mezzi, ognuno dei quali percorre una \textbf{tratta}. I mezzi sono identificati attraverso l'azienda che mette a disposizione il veicolo e il codice mezzo utilizzato dall'azienda, essi si dividono in: autobus, aeroplano, treno, taxi e nave; per il treno e l'aeroplano viene riportata anche la classe. Le tratte sono identificate dal ID del pacchetto a cui si riferiscono, ogni tratta tiene le seguente informazioni:
+\begin{multicols}{2}
+    \begin{itemize}
+        \item mezzo utilizzato per la tratta;
+        \item orario di partenza;
+        \item orario di arrivo;
+        \item luogo di partenza;
+        \item luogo di arrivo.
+    \end{itemize}
+\end{multicols}
 %
 % Destinazioni / descrizione pacchetto & Aloggi
 %
@@ -27,7 +70,7 @@ Un pacchetto può avere molteplici destinazione (viaggio con più tappe) oppure 
 %
 % Città
 %
-Le destinazioni di un pacchetto, il luogo di partenza/arrivo di ogni tratta, i luoghi dove si trovano i soggiorni per il viaggio e la sede legale di un'agenzia è una \textbf{città} che viene identificata dal proprio nome e dal paese in cui si trova, inoltre se disponibile l'informazione viene salvata la regione in cui si trova. Inoltre ogni luogo di soggiorno ha una descrizione (analoga come i pacchetti).
+Le destinazioni di un pacchetto, il luogo di partenza/arrivo di ogni tratta, i luoghi dove si trovano i soggiorni per il viaggio e la sede legale di un'agenzia è una \textbf{città} che viene identificata dal proprio nome e dal paese in cui si trova, inoltre, se è disponibile l'informazione, viene salvata la regione in cui si trova. Inoltre ogni luogo di soggiorno ha una descrizione (analoga ai pacchetti). %TODO: rivedere la frase della regione
 %
 % Recensioni
 %

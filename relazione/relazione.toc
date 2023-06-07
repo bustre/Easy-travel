@@ -2,16 +2,17 @@
 \contentsline {section}{\numberline {1}Abstract}{2}{section.1}%
 \contentsline {section}{\numberline {2}Raccolta e analisi dei requisiti}{3}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Proprietà del sistema}{3}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Glossario dei termini}{4}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Operazioni}{4}{subsection.2.3}%
-\contentsline {section}{\numberline {3}Progettazione concettuale}{6}{section.3}%
-\contentsline {subsection}{\numberline {3.1}ER}{6}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Elenco delle entità}{6}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Elenco delle relazioni}{6}{subsection.3.3}%
-\contentsline {section}{\numberline {4}Progettazione Logica}{7}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Ristrutturazione}{7}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Analisi ridondanze}{7}{subsubsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.2}ER ristrutturato}{7}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Creazione tabelle}{7}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Querry \& indici}{8}{section.5}%
-\contentsline {section}{\numberline {6}Software C++}{9}{section.6}%
+\contentsline {subsection}{\numberline {2.2}Glossario dei termini}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Operazioni}{6}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Progettazione concettuale}{7}{section.3}%
+\contentsline {subsection}{\numberline {3.1}ER}{7}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Elenco delle entità}{7}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Elenco delle relazioni}{7}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Progettazione Logica}{8}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Ristrutturazione}{8}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Analisi ridondanze}{8}{subsubsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.2}ER ristrutturato}{8}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Creazione tabelle}{8}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Querry \& indici}{9}{section.5}%
+\contentsline {section}{\numberline {6}Software C++}{10}{section.6}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
