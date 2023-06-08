@@ -6,8 +6,11 @@
 \contentsline {subsection}{\numberline {2.3}Operazioni}{5}{subsection.2.3}%
 \contentsline {section}{\numberline {3}Progettazione concettuale}{7}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Diagramma ER}{7}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Elenco delle entità}{7}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Elenco delle relazioni}{7}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.2}Tabelle delle entità}{7}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Tabelle delle relazioni}{7}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Regole Aziendali}{7}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Vincoli di integrità}{7}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Derivazioni}{7}{subsubsection.3.4.2}%
 \contentsline {section}{\numberline {4}Progettazione Logica}{8}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Ristrutturazione}{8}{subsection.4.1}%
 \contentsline {subsubsection}{\numberline {4.1.1}Analisi ridondanze}{8}{subsubsection.4.1.1}%
