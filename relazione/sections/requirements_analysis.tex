@@ -34,7 +34,7 @@ Gli utenti possono prenotare i \textbf{pacchetti} di viaggio forniti dalle \text
         \item numero di punti fedeltà (usati per l'acquisto e quelli ricevuti da ogni acquisto).
      \end{itemize}
  \end{multicols}
- Un utente non può ricevere punti se fa uso dello sconto.
+ Un utente riceve dei punti per ogni acquisto, ma non può ricevere punti se li usa durante un acquisto.
 %
 % Pacchetti
 %
@@ -44,8 +44,8 @@ I pacchetti vengono identificati da un ID assegnato sempre dal richiedente, i pa
         \item prezzo\footnote{Originale, senza nessuno sconto.};
         \item disponibilità (posti disponibili per il viaggio);
         \item data di partenza e ritorno;
-        \item numero di persone massime che possono partecipare al viaggio%
-        \footnote{Ovvero un cliente può acquistare un viaggio per 3 persone solo se il pacchetto lo prevede.};
+        \item numero di persone massime che possono partecipare al viaggio;%
+        \footnote{Ovvero un cliente può acquistare un viaggio per 3 persone se e solo se il pacchetto lo prevede.};
         \item la presenza o meno dell'assicurazione per il viaggio.
     \end{itemize}
  \end{multicols}
@@ -53,7 +53,7 @@ Inoltre i pacchetti possono avere uno \textbf{sconto} in cambio di un certo nume
 %
 % Trasporto & tratte
 %
-Ogni pacchetto offre il servizio di \textbf{trasporto} per andare nelle varie destinazioni e per il ritorno. Per arrivare a destinazione o per il ritorno potrebbe essere necessario prendere più mezzi, ognuno dei quali percorre una \textbf{tratta}. I mezzi sono identificati attraverso l'azienda che mette a disposizione il veicolo e il codice mezzo utilizzato dall'azienda, essi si dividono in: autobus, aeroplano, treno, taxi e nave; per il treno e l'aeroplano viene riportata anche la classe. Le tratte sono identificate dal ID del pacchetto a cui si riferiscono, ogni tratta tiene le seguente informazioni:
+Ogni pacchetto offre il servizio di \textbf{trasporto} per andare nelle varie destinazioni e per il ritorno. Per arrivare a destinazione o per il ritorno può essere necessario prendere più mezzi, ognuno dei quali percorre una \textbf{tratta}. I mezzi sono identificati attraverso l'azienda che mette a disposizione il veicolo e il codice mezzo utilizzato dall'azienda, essi si dividono in: autobus, aeroplano, treno, taxi e nave; per il treno e l'aeroplano viene riportata anche la classe. Le tratte sono identificate mezzo che percorre la tratta, dall'orario e data di partenza. Ogni tratta tiene le seguente informazioni:
 \begin{multicols}{2}
     \begin{itemize}
         \item mezzo utilizzato per la tratta;
@@ -66,15 +66,15 @@ Ogni pacchetto offre il servizio di \textbf{trasporto} per andare nelle varie de
 %
 % Destinazioni / descrizione pacchetto & Aloggi
 %
-Un pacchetto può avere molteplici destinazione (viaggio con più tappe) oppure solo una (classico), inoltre vengono salvati anche gli \textbf{alloggi} che il turista userà durante il viaggio, per ogni alloggio viene fornita una \textbf{descrizione} e il numero di stelle. Gli alloggi vengono identificati dal nome della struttura e dal luogo in cu si trovano.
+Un pacchetto può avere molteplici destinazione (viaggio con più tappe) oppure solo una destinazione (classico), inoltre vengono salvati anche gli \textbf{alloggi} che il turista userà durante il viaggio, per ogni alloggio viene fornita una \textbf{descrizione} e il numero di stelle dell'alloggio se disponibili. Gli alloggi vengono identificati dal nome della struttura e dal luogo in cu si trovano.
 %
 % Città
 %
-Le destinazioni di un pacchetto, il luogo di partenza/arrivo di ogni tratta, i luoghi dove si trovano i soggiorni per il viaggio e la sede legale di un'agenzia è una \textbf{città} che viene identificata dal proprio nome e dal paese in cui si trova, inoltre, se è disponibile l'informazione, viene salvata la regione in cui si trova. Inoltre ogni luogo di soggiorno ha una descrizione (analoga ai pacchetti). %TODO: rivedere la frase della regione
+Le destinazioni di un pacchetto, il luogo di partenza/arrivo di ogni tratta, i luoghi dove si trovano i soggiorni per il viaggio e la sede legale di un'agenzia sono delle \textbf{città}. Una città che viene identificata dal proprio nome e dal paese in cui si trova, inoltre, se è disponibile l'informazione, viene salvata la regione in cui si trova.
 %
 % Recensioni
 %
-L'utente può scrivere delle \textbf{recensioni} per il pacchetto e per i luoghi di soggiorno, le recensioni sono identificate ID interno all'azienda. Nella recensione vengono salvati il numero di stelle e una testo.
+L'utente può scrivere delle \textbf{recensioni} per il pacchetto e per i luoghi di soggiorno, le recensioni sono identificate ID interno all'azienda. Nella recensione viene salvato un giudizio su una scala da 0 a 5 e una testo che può essere facoltativo.
 %
 % Descrizione
 %
