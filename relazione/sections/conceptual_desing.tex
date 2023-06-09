@@ -1,5 +1,5 @@
 \section{Progettazione concettuale}
-\subsection{Diagramma ER}
+
 \begin{figure}
     \centering
     \caption{Diagramma ER - progettazione concettuale}
@@ -8,9 +8,48 @@
 \end{figure}
 
 \subsection{Tabelle delle entità}
+\begin{center}
+    \begin{tabularx}{\textwidth}{p{0.2\textwidth} X p{0.3\textwidth}}
+        \caption{Tabella delle entità}\\\toprule\endfirsthead
+        \toprule\endhead
+        \midrule\multicolumn{3}{r}{\itshape Continua nella pagina successiva}\\\midrule\endfoot
+        \bottomrule\endlastfoot
+        %
+        %
+        \textbf{Operazione} & \textbf{Descrizione dell'operazione} & \textbf{N°. operazioni}
+        \\
+        && (\textbf{operazioni/tempo})\footnote{Riportiamo misure di tempo: \textbf{dd} = giorni, \textbf{mm} = mesi \& \textbf{yy} = anni.}
+        \\\midrule
+        \emph{Inserimento pacchetto} & Inserimento di un pacchetto da parte di una agenzia & 10 o/dd
+        \\\midrule
+        \emph{Inserimento descrizione} & Inserimento di una descrizione per un pacchetto o per un luogo di soggiorno & 15 o/dd
+        \\\midrule
+        \emph{Inserimento mezzo} & Inserimento nuovo mezzo per un viaggio & 2 o/mm
+        \\\midrule
+        \emph{Iscrizione utente} & Un utente si iscrive al servizio & 40 o/dd
+        \\\midrule
+        \emph{Inserimento recensione} & Un utente aggiunge una recensione & 3.000 o/mm
+        \\\midrule
+        \emph{Ricerca pacchetti} & Ricerca dei pacchetti da parte degli utenti & 600.000 o/dd
+        \\\midrule
+        \emph{Inserimento agenzia} & Viene aggiunta una nuova agenzia & 3 o/mm
+        \\\midrule
+        \emph{Inserimento città} & Viene aggiunta una nuova città & 10 o/yy
+        \\\midrule
+        \emph{Inserimento sconto} & Inserimento di un nuovo sconto & 8 o/dd
+        \\\midrule
+        \emph{Acquisto pacchetto} & Un cliente acquista un pacchetto & 100.000 o/gg
+        \\\midrule
+        \emph{Visualizzazione degli acquisti} & Un cliente vuole visualizzare gli acquisti passati & 90 o/gg
+        \\\midrule
+        \emph{Visualizzazione dei punti} & Un cliente vuole vedere i punti a sua disposizione & 1.600 o/gg
+        \\
+    \end{tabularx}
+\end{center}
 
 \subsection{Tabelle delle relazioni}
 
 \subsection{Regole Aziendali}
+Di seguito riportiamo i vincoli non esprimibili attraverso il diagramma ER.
 \subsubsection{Vincoli di integrità}
 \subsubsection{Derivazioni}
