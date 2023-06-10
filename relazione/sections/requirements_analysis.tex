@@ -28,10 +28,10 @@ Gli \textbf{utenti} sono registrati alla piattaforma, sono identificati da un us
 Gli utenti possono prenotare i \textbf{pacchetti} di viaggio forniti dalle \textbf{agenzie di viaggio} identificate nel database attraverso il LEI (un codice internazionale che identifica univocamente le aziende), inoltre viene salvato il nome dell'agenzia e la sua sede legale. Di ogni acquisto effettuato dall'utente viene salvato:
 \begin{multicols}{2}
     \begin{itemize}
-        \item data;
-        \item numero di minori che partecipano al viaggio;
-        \item numero totale (minori compresi) di persone che partecipano al viaggio;
-        \item numero di punti fedeltà (usati per l'acquisto e quelli ricevuti da ogni acquisto).
+        \item la data;
+        \item il numero di minori che partecipano al viaggio;
+        \item il numero totale (minori compresi) di persone che partecipano al viaggio;
+        \item il numero di punti fedeltà (usati per l'acquisto e quelli ricevuti da ogni acquisto).
      \end{itemize}
  \end{multicols}
  Un utente riceve dei punti per ogni acquisto, ma non può ricevere punti se li usa durante un acquisto.
@@ -66,11 +66,11 @@ Ogni pacchetto offre il servizio di \textbf{trasporto} per andare nelle varie de
 %
 % Destinazioni / descrizione pacchetto & Aloggi
 %
-Un pacchetto può avere molteplici destinazione (viaggio con più tappe) oppure solo una destinazione (classico), inoltre vengono salvati anche gli \textbf{alloggi} che il turista userà durante il viaggio, per ogni alloggio viene fornita una \textbf{descrizione} e il numero di stelle dell'alloggio se disponibili. Gli alloggi vengono identificati dal nome della struttura e dal luogo in cu si trovano.
+Un pacchetto può avere molteplici destinazione (viaggio con più tappe) oppure solo una destinazione (classico), inoltre vengono salvati anche gli \textbf{alloggi} che il turista userà durante il viaggio, per ogni alloggio viene fornita una \textbf{descrizione} e il numero di stelle (da 1 a 5) dell'alloggio se disponibili. Gli alloggi vengono identificati dal nome della struttura e dal luogo in cu si trovano.
 %
 % Città
 %
-Le destinazioni di un pacchetto, il luogo di partenza/arrivo di ogni tratta, i luoghi dove si trovano i soggiorni per il viaggio e la sede legale di un'agenzia sono delle \textbf{città}. Una città che viene identificata dal proprio nome e dal paese in cui si trova, inoltre, se è disponibile l'informazione, viene salvata la regione in cui si trova.
+Le destinazioni di un pacchetto, il luogo di partenza/arrivo di ogni tratta, i luoghi dove si trovano i soggiorni per il viaggio e la sede legale di un'agenzia sono delle \textbf{città}. Una città che viene identificata da un codice interno, vengono riportate le seguente informazioni: nome della città, nome del paese in cui si trova e, se è disponibile l'informazione, viene salvata la regione in cui si trova.
 %
 % Recensioni
 %
