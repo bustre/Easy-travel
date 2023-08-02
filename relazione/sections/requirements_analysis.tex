@@ -9,7 +9,7 @@ Si vuole realizzare una base di dati per un società che permette di confrontare
 % Utenti
 %
 Gli \textbf{utenti} sono registrati alla piattaforma, sono identificati da un username scelto durante la fase di registrazione al servizio, inoltre vengono memorizzati per ogni utente:
-\begin{multicols}{2}
+\begin{multicols}{3}
 \begin{itemize}
     \item nome;
     \item cognome;
@@ -26,7 +26,7 @@ Gli \textbf{utenti} sono registrati alla piattaforma, sono identificati da un us
 % Cliente -> Acquisti
 %
 Gli utenti possono prenotare i \textbf{pacchetti} di viaggio forniti dalle \textbf{agenzie di viaggio} identificate nel database attraverso il LEI (un codice internazionale che identifica univocamente le aziende), inoltre viene salvato il nome dell'agenzia e la sua sede legale. Di ogni acquisto effettuato dall'utente viene salvato:
-\begin{multicols}{2}
+\begin{multicols}{3}
     \begin{itemize}
         \item la data;
         \item il numero di minori che partecipano al viaggio;
@@ -39,7 +39,7 @@ Gli utenti possono prenotare i \textbf{pacchetti} di viaggio forniti dalle \text
 % Pacchetti
 %
 I pacchetti vengono identificati da un ID assegnato sempre dal richiedente, i pacchetti hanno:
-\begin{multicols}{2}
+\begin{multicols}{3}
     \begin{itemize}
         \item prezzo\footnote{Originale, senza nessuno sconto.};
         \item disponibilità (posti disponibili per il viaggio);
@@ -54,7 +54,7 @@ Inoltre i pacchetti possono avere uno \textbf{sconto} in cambio di un certo nume
 % Trasporto & tratte
 %
 Ogni pacchetto offre il servizio di \textbf{trasporto} per andare nelle varie destinazioni e per il ritorno. Per arrivare a destinazione o per il ritorno può essere necessario prendere più mezzi, ognuno dei quali percorre una \textbf{tratta}. I mezzi sono identificati attraverso l'azienda che mette a disposizione il veicolo e il codice mezzo utilizzato dall'azienda, essi si dividono in: autobus, aeroplano, treno, taxi e nave; per il treno e l'aeroplano viene riportata anche la classe. Le tratte sono identificate mezzo che percorre la tratta, dall'orario e data di partenza. Ogni tratta tiene le seguente informazioni:
-\begin{multicols}{2}
+\begin{multicols}{3}
     \begin{itemize}
         \item mezzo utilizzato per la tratta;
         \item orario di partenza;
@@ -83,7 +83,7 @@ Il pacchetto e l'alloggio ha una \textbf{descrizione}, identificata univocamente
 
 \subsection{Glossario dei termini}
 \begin{center}
-    \begin{tabularx}{\textwidth}{p{0.16\textwidth} X p{0.15\textwidth} p{0.18\textwidth}}
+    \begin{tabularx}{\textwidth}{p{0.16\textwidth} X p{0.18\textwidth} p{0.20\textwidth}}
         \caption{Dizionario termini}\\\toprule\endfirsthead
         \toprule\endhead
         \midrule\multicolumn{4}{r}{\itshape Continua nella pagina successiva}\\\midrule\endfoot
@@ -97,7 +97,7 @@ Il pacchetto e l'alloggio ha una \textbf{descrizione}, identificata univocamente
         \\\midrule
         \textbf{Pacchetto} & Soluzione di viaggio offerto da un'agenzia di viaggio & Pacchetto di viaggio & Cliente, Recensioni, Città, Soggiorno, Tratte, Prenota
         \\\midrule
-        \textbf{Prenota-zione} & Comprare un pacchetto di viaggio & Acquisto, comprare & Cliente, Pacchetto
+        \textbf{Prenotazione} & Comprare un pacchetto di viaggio & Acquisto, comprare & Cliente, Pacchetto
         \\\midrule
         \textbf{Tratta} & Tratta percorsa da un mezzo di trasporto & & Mezzo, Città, Pacchetto
         \\\midrule
