@@ -4,8 +4,8 @@
 \contentsline {subsection}{\numberline {2.1}Proprietà del sistema}{2}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Glossario dei termini}{3}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Operazioni}{4}{subsection.2.3}%
-\contentsline {section}{\numberline {3}Progettazione concettuale}{6}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Tabelle delle entità}{6}{subsection.3.1}%
+\contentsline {section}{\numberline {3}Progettazione concettuale}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Tabelle delle entità}{5}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Tabelle delle relazioni}{6}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Regole Aziendali}{6}{subsection.3.3}%
 \contentsline {subsubsection}{\numberline {3.3.1}Vincoli di integrità}{6}{subsubsection.3.3.1}%
@@ -17,3 +17,4 @@
 \contentsline {subsection}{\numberline {4.3}Creazione tabelle}{6}{subsection.4.3}%
 \contentsline {section}{\numberline {5}Querry \& indici}{6}{section.5}%
 \contentsline {section}{\numberline {6}Software C++}{6}{section.6}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
