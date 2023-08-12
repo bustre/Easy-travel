@@ -4,14 +4,14 @@
 \contentsline {subsection}{\numberline {2.1}Proprietà del sistema}{2}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Glossario dei termini}{3}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Operazioni}{4}{subsection.2.3}%
-\contentsline {section}{\numberline {3}Progettazione concettuale}{5}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Tabelle delle entità}{5}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Tabelle delle relazioni}{6}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Regole Aziendali}{6}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Vincoli di integrità}{6}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}Derivazioni}{6}{subsubsection.3.3.2}%
-\contentsline {section}{\numberline {4}Progettazione Logica}{6}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Ristrutturazione}{6}{subsection.4.1}%
+\contentsline {section}{\numberline {3}Progettazione concettuale}{4}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Tabelle delle entità}{4}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Tabelle delle relazioni}{5}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Regole Aziendali}{5}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Vincoli di integrità}{5}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Derivazioni}{5}{subsubsection.3.3.2}%
+\contentsline {section}{\numberline {4}Progettazione Logica}{5}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Ristrutturazione}{5}{subsection.4.1}%
 \contentsline {subsubsection}{\numberline {4.1.1}Analisi ridondanze}{6}{subsubsection.4.1.1}%
 \contentsline {subsection}{\numberline {4.2}ER ristrutturato}{6}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Creazione tabelle}{6}{subsection.4.3}%

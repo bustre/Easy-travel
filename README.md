@@ -17,8 +17,8 @@ Attenzione questo file è gestito soltanto nel branch main
 ## Divisione dei lavori (in blocchi)
 ### Progettazione concettubustre + logica
 - [x] @bustre: finire l'ER concettubustre
-- [ ] @bustre & @FilippoRighetto: discutere e controllare la correttezza/completezza dell'ER concettubustre
-- [ ] @FilippoRighetto: passare da ER concettubustre a logico motivando brevemente il perché,
+- [x] @bustre & @FilippoRighetto: discutere e controllare la correttezza/completezza dell'ER concettubustre
+- [ ] @FilippoRighetto: passare da ER concettuale a logico motivando brevemente il perché
 - [ ] @bustre & @FilippoRighetto: discutere e controllare la correttezza/completezza dell'ER logico
 - [ ] @bustre: implementare i risultati ottenuti fino a questo punto nella relazione (fino creazione tabelle escluse)
 - [ ] @bustre & @FilippoRighetto: cercare dei vincoli di schema (regole aziendali), man mano che ci vengono in mente riportarli sul file di testo presente nella cartella relazione\vincoli.txt nel branch relazione
