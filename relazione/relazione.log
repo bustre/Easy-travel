@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.11)  12 AUG 2023 07:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.11)  12 AUG 2023 07:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1173,28 +1173,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 184--184
  []
 
 [4]) (./sections/conceptual_desing.tex
-<./svg-inkscape/ER_concettuale_svg-raw.png, id=96, 1090.5543pt x 736.9131pt>
-File: ./svg-inkscape/ER_concettuale_svg-raw.png Graphic file (type png)
-<use ./svg-inkscape/ER_concettuale_svg-raw.png>
-Package pdftex.def Info: ./svg-inkscape/ER_concettuale_svg-raw.png  used on inp
-ut line 7.
-(pdftex.def)             Requested size: 1090.55165pt x 736.9113pt.
+<assets/ER_concettuale.png, id=96, 2758.305pt x 2109.8825pt>
+File: assets/ER_concettuale.png Graphic file (type png)
+<use assets/ER_concettuale.png>
+Package pdftex.def Info: assets/ER_concettuale.png  used on input line 7.
+(pdftex.def)             Requested size: 426.79135pt x 326.44891pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 26--26
 []|\T1/cmr/m/it/10 Inserimento pac-
  []
 
-[5 <./svg-inkscape/ER_concettuale_svg-raw.png>]) (./sections/logical_desing.tex
-) (./sections/querry_index.tex) (./sections/application.tex) [6]
-(./relazione.aux)
+[5 <./assets/ER_concettuale.png>]) (./sections/logical_desing.tex)
+(./sections/querry_index.tex) (./sections/application.tex) [6] (./relazione.aux
+)
 Package rerunfilecheck Info: File `relazione.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 30218 strings out of 476091
- 624199 string characters out of 5794081
+ 30205 strings out of 476091
+ 623827 string characters out of 5794081
  1880330 words of memory out of 5000000
- 50067 multiletter control sequences out of 15000+600000
+ 50059 multiletter control sequences out of 15000+600000
  525915 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,13n,106p,10657b,1301s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1218,7 +1217,7 @@ uper/sfsx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx1440.pfb></
 usr/share/texmf/fonts/type1/public/cm-super/sfsx2074.pfb></usr/share/texmf/font
 s/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-su
 per/sftt1000.pfb>
-Output written on relazione.pdf (6 pages, 1784200 bytes).
+Output written on relazione.pdf (6 pages, 602802 bytes).
 PDF statistics:
  242 PDF objects out of 1000 (max. 8388607)
  196 compressed objects within 2 object streams
