@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.11)  12 AUG 2023 11:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.11)  12 AUG 2023 11:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -905,33 +905,33 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 (./relazione.aux)
 \openout1 = `relazione.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-Package scrbase Info: activating english \abstractname on input line 43.
-Package scrbase Info: activating english \partname on input line 43.
-Package scrbase Info: activating english \figurename on input line 43.
-Package scrbase Info: activating english \tablename on input line 43.
-Package scrbase Info: activating english \contentsname on input line 43.
-Package scrbase Info: activating english \listfigurename on input line 43.
-Package scrbase Info: activating english \listtablename on input line 43.
-Package scrbase Info: activating english \refname on input line 43.
-Package scrbase Info: activating english \indexname on input line 43.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+Package scrbase Info: activating english \abstractname on input line 46.
+Package scrbase Info: activating english \partname on input line 46.
+Package scrbase Info: activating english \figurename on input line 46.
+Package scrbase Info: activating english \tablename on input line 46.
+Package scrbase Info: activating english \contentsname on input line 46.
+Package scrbase Info: activating english \listfigurename on input line 46.
+Package scrbase Info: activating english \listtablename on input line 46.
+Package scrbase Info: activating english \refname on input line 46.
+Package scrbase Info: activating english \indexname on input line 46.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -967,8 +967,8 @@ Package scrbase Info: activating english \indexname on input line 43.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \it@ocap on input line 43.
-LaTeX Info: Redefining \it@ccap on input line 43.
+LaTeX Info: Redefining \it@ocap on input line 46.
+LaTeX Info: Redefining \it@ccap on input line 46.
 \c@lstlisting=\count348
 
 (/usr/share/texlive/texmf-dist/tex/latex/translations/translations-basic-dictio
@@ -977,9 +977,9 @@ File: translations-basic-dictionary-english.trsl (english translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 43.
+or `english'. on input line 46.
 Package translations Info: no dictionary file `translations-basic-dictionary-it
-alian.trsl' found. on input line 43.
+alian.trsl' found. on input line 46.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1003,7 +1003,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 43.
+Package hyperref Info: Link coloring ON on input line 46.
 
 (./relazione.out) (./relazione.out)
 \@outlinefile=\write4
@@ -1016,7 +1016,7 @@ Class scrartcl Info: loading recommended package `bookmark'.
 (scrartcl)           `bookmarkpackage=false' before \begin{document} and
 (scrartcl)           you can avoid this message adding:
 (scrartcl)             \usepackage{bookmark}
-(scrartcl)           before \begin{document} on input line 43.
+(scrartcl)           before \begin{document} on input line 46.
 
 (/usr/share/texlive/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
@@ -1026,15 +1026,15 @@ File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
 \BKM@id=\count355
 ))
 LaTeX Font Info:    Trying to load font information for T1+cmss on input line 4
-5.
+8.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 45.
+(Font)              <14.4> on input line 48.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 45.
+(Font)              <7> on input line 48.
  (./relazione.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 4.
@@ -1148,28 +1148,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 126--128
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 164--164
-[]|\T1/cmr/m/it/10 Inserimento pac-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 164--164
-[]|\T1/cmr/m/it/10 Inserimento de-
- []
-
-
-Underfull \hbox (badness 1558) in paragraph at lines 164--164
-[]|\T1/cmr/m/it/10 Inserimento re-cen-
- []
-
-
-Underfull \hbox (badness 6001) in paragraph at lines 164--164
-[]|\T1/cmr/m/it/10 Inserimento agen-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 164--164
-[]|\T1/cmr/m/it/10 Visualizzazione
+Overfull \hbox (7.57379pt too wide) in paragraph at lines 164--164
+ []|\T1/cmr/m/n/10 (\T1/cmr/bx/n/10 operazioni/tempo\T1/cmr/m/n/10 )[][][][][]|
+ 
  []
 
 ) (./sections/conceptual_desing.tex
@@ -1190,10 +1171,10 @@ Package rerunfilecheck Info: File `relazione.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 30204 strings out of 476091
- 623816 string characters out of 5794081
+ 30206 strings out of 476091
+ 623837 string characters out of 5794081
  1878330 words of memory out of 5000000
- 50059 multiletter control sequences out of 15000+600000
+ 50061 multiletter control sequences out of 15000+600000
  525915 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,13n,106p,10657b,1293s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1217,7 +1198,7 @@ uper/sfsx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx1440.pfb></
 usr/share/texmf/fonts/type1/public/cm-super/sfsx2074.pfb></usr/share/texmf/font
 s/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-su
 per/sftt1000.pfb>
-Output written on relazione.pdf (6 pages, 605603 bytes).
+Output written on relazione.pdf (6 pages, 605631 bytes).
 PDF statistics:
  240 PDF objects out of 1000 (max. 8388607)
  194 compressed objects within 2 object streams

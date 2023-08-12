@@ -28,7 +28,7 @@ Ogni \textbf{transizione} viene identificata da \underline{codice} e riporta i s
 % Pacchetti
 %
 I \textbf{pacchetti} vengono identificati attraverso un \underline{ID} e sono inseriti nel sistema dalle agenzie, inoltre ogni soluzione di viaggio deve riportare le seguente informazioni:
-\begin{multicols}{2}
+\begin{multicols}{3}
 \begin{itemize}
     \item il prezzo,\footnote{per ogni singola persona.}
     \item la disponibilità, \footnote{Numero di pacchetti ancora disponibili}
@@ -79,7 +79,7 @@ Le destinazioni di un pacchetto, il luogo di partenza/arrivo di ogni tratta, i l
 %
 % Recensioni
 %
-L'utente può scrivere delle \textbf{recensioni} per ogni pacchetto viaggio che ha acquistato e per l'agenzia che ha fornito la soluzione, le recensioni sono identificate da un \underline{ID}. Nella recensione viene salvato un giudizio su una scala da 0 a 5 e una motivazione del giudizio dato che può essere facoltativo.
+L'utente può scrivere delle \textbf{recensioni} per ogni pacchetto viaggio che ha acquistato e per l'agenzia che ha fornito la soluzione, le recensioni sono identificate da un \underline{ID}. Nella recensione viene salvato un giudizio su una scala da 0 a 5 e una motivazione del giudizio che può essere facoltativo.
 
 %
 % Descrizione
@@ -126,7 +126,7 @@ Il pacchetto e l'alloggio devono avere una \textbf{descrizione} identificata uni
 Nel caso d'uso perso in esame il numero di operazioni effettuate non hanno una distribuzione uniforme durante l'anno, ma alcune operazioni in particolare presentano un numero di richieste maggiore durante i periodi di vacanza, cioè durante i periodi di \emph{massimo carico} per il sistema, mentre in altri periodi ci sono momenti di \emph{idle}. Riportiamo di seguito le operazioni considerando il massimo di operazioni registrare per un certo periodo, dato che in contesti come questi la priorità è che il sistema riesca a soddisfare tutte le richieste.
 \newline
 \begin{center}
-    \begin{tabularx}{\textwidth}{p{0.2\textwidth} X p{0.25\textwidth}}
+    \begin{tabularx}{\textwidth}{L X >{\centering\arraybackslash}p{0.22\textwidth}}
         \caption{Tabella delle operazioni}\\\toprule\endfirsthead
         \toprule\endhead
         \midrule\multicolumn{3}{r}{\itshape Continua nella pagina successiva}\\\midrule\endfoot
