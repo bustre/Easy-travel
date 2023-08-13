@@ -3,11 +3,6 @@
 \subsection{Proprietà del sistema}
 
 %
-% Incipit
-%
-Si vuole realizzare una base di dati per applicazione che permette di confrontare le offerte fornite da diverse agenzie di viaggio, si desidera rappresentare: gli utenti, i pagamenti, le agenzie, i pacchetti di viaggio, le recensioni, gli alloggi, i mezzi di trasporto, le tratte che percorrono i mezzi, le città di soggiorno e la descrizione testuale di ogni soluzione di viaggio.
-
-%
 % Utenti 
 %
 Gli \textbf{utenti} che sono registrati alla piattaforma vengono identificati da uno \underline{username} scelto durante la fase di registrazione al servizio, inoltre vengono memorizzati per ogni utente: la password, l'email e la data di iscrizione al servizio.
@@ -23,28 +18,28 @@ I clienti possono prenotare i pacchetti di viaggio forniti dalle agenzie. Per og
 %
 % Pagamento -> transizione
 %
-Ogni \textbf{transizione} viene identificata da \underline{codice} e riporta i seguenti dati: la banca dove è avvenuto il pagamento, il circuito bancario usato e il timestamp della transizione.
+Ogni \textbf{transizione} viene identificata da un \underline{codice} e riporta i seguenti dati: la banca dove è avvenuto il pagamento, il circuito bancario usato e il timestamp della transizione.
 %
 % Pacchetti
 %
 I \textbf{pacchetti} vengono identificati attraverso un \underline{ID} e sono inseriti nel sistema dalle agenzie, inoltre ogni soluzione di viaggio deve riportare le seguente informazioni:
 \begin{multicols}{3}
 \begin{itemize}
-    \item il prezzo,\footnote{per ogni singola persona.}
-    \item la disponibilità, \footnote{Numero di pacchetti ancora disponibili}
+    \item il prezzo\footnote{per ogni singola persona.},
+    \item la disponibilità\footnote{Numero di pacchetti ancora disponibili},
     \item la data di partenza e di ritorno,
-    \item il massimo numero di partecipanti,\footnote{Il numero di persone massime che ammette un pacchetto di viaggio per un solo acquisto.}
+    \item il massimo numero di partecipanti\footnote{Il numero di persone massime che ammette un pacchetto di viaggio per un solo acquisto.},
     \item una descrizione del viaggio,
     \item l'alloggio,
     \item le varie tratte da fare per arrivare e tornare,
     \item l'assicurazione per il viaggio.
 \end{itemize}
 \end{multicols}
-Ogni viaggio deve fare riferimento ad \textbf{polizza} assicurativa che viene identificata nel sistema attraverso un \underline{ID}, inoltre viene salvata: una descrizione della polizza e il nome dell'agenzia di assicurazione.
+Ogni viaggio deve fare riferimento ad una \textbf{polizza} assicurativa che viene identificata nel sistema attraverso un \underline{ID}, inoltre viene salvata: una descrizione della polizza e il nome dell'agenzia di assicurazione.
 %
 % Trasporto & tratte
 %
-Ogni pacchetto comprende già i mezzi da prendere per andare nelle varie destinazioni e per il ritorno. Per arrivare a destinazione o per il ritorno può essere necessario prendere più mezzi, ognuno dei quali percorre una tratta. I \textbf{mezzi di trasporto} sono identificati attraverso l'\underline{azienda} che mette a disposizione il veicolo e il \underline{codice mezzo} utilizzato dall'azienda. Vengono registrati per ogni \emph{tipologia} di mezzo le seguenti informazioni:
+Ogni pacchetto comprende già i mezzi da prendere per andare nelle varie destinazioni e per il ritorno, ogni mezzo percorre una tratta. I \textbf{mezzi di trasporto} sono identificati attraverso l'\underline{azienda} che mette a disposizione il veicolo e il \underline{codice mezzo} utilizzato dall'azienda. Vengono registrati per ogni \emph{tipologia} di mezzo le seguenti informazioni:
 l'\textbf{autobus} riporta il numero di linea,
 il \textbf{Treno} e la \textbf{Nave} riportano la classe,
 l'\textbf{aereo} riporta:
@@ -52,12 +47,13 @@ la classe,
 il check-in\footnote{Informazioni per il Check-in.},
 bagaglio in stiva\footnote{Viene indicato se è incluso nel pacchetto.},
 bagaglio a mano\footnote{Viene riportato il peso concesso.},
+il \textbf{Taxi} riporta il numero di telefono.
+
 %
-il \textbf{Taxi} taxi riporta il numero di telefono.
-
-
+% Tratta
+%
 Di ogni \textbf{tratta} identificata attraverso: il \underline{il mezzo}, l'\underline{ora di partenza} e la \underline{data di partenza}. Inoltre ogni tratta riporta le seguente informazioni:
-\begin{multicols}{2}
+\begin{multicols}{3}
     \begin{itemize}
         \item orario di arrivo;
         \item data di arrivo;
@@ -74,7 +70,7 @@ Un pacchetto può avere molteplici destinazione (viaggio con più tappe) oppure 
 %
 % Città
 %
-Le destinazioni di un pacchetto, il luogo di partenza/arrivo di ogni tratta, i luoghi dove si trovano i soggiorni per il viaggio e la sede legale di un'agenzia sono delle \emph{città}. Una \textbf{città} che viene identificata da un \underline{codice interno}, vengono riportate le seguente informazioni: nome della città e nome del stato in cui si trova.
+Le destinazioni di un pacchetto, il luogo di partenza/arrivo di ogni tratta, i luoghi dove si trovano i soggiorni per il viaggio e la sede legale di un'agenzia sono delle \emph{città}. Una \textbf{città} viene identificata da un \underline{codice interno}, vengono riportate le seguente informazioni: nome della città e nome del stato in cui si trova.
 
 %
 % Recensioni
@@ -89,7 +85,7 @@ Il pacchetto e l'alloggio devono avere una \textbf{descrizione} identificata uni
 
 \subsection{Glossario dei termini}
 \begin{center}
-    \begin{tabularx}{\textwidth}{p{0.16\textwidth} X p{0.18\textwidth} p{0.20\textwidth}}
+    \begin{tabularx}{\textwidth}{p{0.16\textwidth} X J p{0.20\textwidth}}
         \caption{Dizionario termini}\\\toprule\endfirsthead
         \toprule\endhead
         \midrule\multicolumn{4}{r}{\itshape Continua nella pagina successiva}\\\midrule\endfoot
@@ -123,7 +119,7 @@ Il pacchetto e l'alloggio devono avere una \textbf{descrizione} identificata uni
 \end{center}
 
 \subsection{Operazioni}
-Nel caso d'uso perso in esame il numero di operazioni effettuate non hanno una distribuzione uniforme durante l'anno, ma alcune operazioni in particolare presentano un numero di richieste maggiore durante i periodi di vacanza, cioè durante i periodi di \emph{massimo carico} per il sistema, mentre in altri periodi ci sono momenti di \emph{idle}. Riportiamo di seguito le operazioni considerando il massimo di operazioni registrare per un certo periodo, dato che in contesti come questi la priorità è che il sistema riesca a soddisfare tutte le richieste.
+Nel caso d'uso perso in esame il numero di operazioni effettuate non hanno una distribuzione uniforme durante tutto l'anno, ma alcune operazioni in particolare presentano un numero di richieste maggiore durante i periodi di vacanza, cioè durante i periodi di \emph{massimo carico} per il sistema, mentre in altri periodi ci sono momenti di \emph{idle}. Riportiamo di seguito le operazioni considerando il massimo delle operazioni registrare per un certo periodo, dato che in contesti come questi la priorità è che il sistema riesca a soddisfare tutte le richieste.
 \newline
 \begin{center}
     \begin{tabularx}{\textwidth}{L X >{\centering\arraybackslash}p{0.22\textwidth}}
@@ -135,7 +131,7 @@ Nel caso d'uso perso in esame il numero di operazioni effettuate non hanno una d
         %
         \textbf{Operazione} & \textbf{Descrizione dell'operazione} & \textbf{N°. operazioni}
         \\
-        && (\textbf{operazioni/tempo})\footnote{Riportiamo le misure di tempo: \textbf{dd} = giorni, \textbf{mm} = mesi \& \textbf{yy} = anni.}
+        && (\textbf{operazioni/tempo})\footnote{Riportiamo le misure di tempo: \textbf{dd} = giorni, \textbf{mm} = mesi e \textbf{yy} = anni.}
         \\\midrule
         \emph{Inserimento pacchetto} & Inserimento di un pacchetto da parte di una agenzia & 10 o/dd
         \\\midrule
@@ -153,13 +149,9 @@ Nel caso d'uso perso in esame il numero di operazioni effettuate non hanno una d
         \\\midrule
         \emph{Inserimento città} & Viene aggiunta una nuova città & 10 o/yy
         \\\midrule
-        \emph{Inserimento sconto} & Inserimento di un nuovo sconto & 8 o/dd
-        \\\midrule
         \emph{Acquisto pacchetto} & Un cliente acquista un pacchetto & 100.000 o/gg
         \\\midrule
         \emph{Visualizzazione degli acquisti} & Un cliente vuole visualizzare gli acquisti passati & 90 o/gg
-        \\\midrule
-        \emph{Visualizzazione dei punti} & Un cliente vuole vedere i punti a sua disposizione & 1.600 o/gg
         \\
     \end{tabularx}
 \end{center}
