@@ -6,40 +6,45 @@
 % Utenti 
 %
 Gli \textbf{utenti} che sono registrati alla piattaforma vengono identificati da uno \underline{username} scelto durante la fase di registrazione al servizio, inoltre vengono memorizzati per ogni utente: la password, l'email e la data di iscrizione al servizio.
-
 %
 % Utente -> Cliente
 %
-All'interno del sistema esistono due tipologie di utenti: i \emph{clienti} e le \emph{agenzie}. Di ogni \textbf{cliente} vengono salvate delle informazioni aggiuntive: il nome, il cognome e il numero di telefono (facoltativo). Mentre per ogni \textbf{agenzia} presente nel database viene salvato in aggiunta: il nome e la sede legale con l'indirizzo.
+All'interno del sistema esistono due tipologie di utenti: i \emph{clienti} e le \emph{agenzie}. Di ogni \textbf{cliente} vengono salvate delle informazioni aggiuntive: il nome, il cognome, la data di nascita, il sesso, e facoltativamente il numero di telefono. Mentre per ogni \textbf{agenzia} presente nel database viene salvato in aggiunta: il nome e la sede legale con l'indirizzo.
+
 %
 % Clienti -> pacchetti
 %
-I clienti possono prenotare i pacchetti di viaggio forniti dalle agenzie. Per ogni \textbf{prenotazione} identificata dall'\underline{utente} che ha effettuato l'operazione e dalla \underline{data dell'operazione}, vengono salvati inoltre: il numero di persone che partecipano e la transizione.
+I clienti possono prenotare i pacchetti di viaggio forniti dalle agenzie. Per ogni \textbf{prenotazione} ci interessano le seguente informazioni: il cliente che ha eseguito la prenotazione, il timestamp dell'operazione, il numero di persone che partecipano alla vacanza e la transizione del pagamento.
 %
 % Pagamento -> transizione
 %
-Ogni \textbf{transizione} viene identificata da un \underline{codice} e riporta i seguenti dati: la banca dove è avvenuto il pagamento, il circuito bancario usato e il timestamp della transizione.
+Ogni \textbf{transizione} viene identificata da un \underline{codice} e riporta i seguenti dati: la banca dove è avvenuto il pagamento, l'importo, il circuito bancario usato e l'ora con la data della avvenuta transizione.
 %
 % Pacchetti
 %
 I \textbf{pacchetti} vengono identificati attraverso un \underline{ID} e sono inseriti nel sistema dalle agenzie, inoltre ogni soluzione di viaggio deve riportare le seguente informazioni:
 \begin{multicols}{3}
 \begin{itemize}
-    \item il prezzo\footnote{per ogni singola persona.},
-    \item la disponibilità\footnote{Numero di pacchetti ancora disponibili},
+    \item il prezzo\footnote{Per ogni singola persona.},
+    \item la disponibilità\footnote{Numero di pacchetti ancora disponibili; non va confuso col il numero di partecipanti.},
     \item la data di partenza e di ritorno,
     \item il massimo numero di partecipanti\footnote{Il numero di persone massime che ammette un pacchetto di viaggio per un solo acquisto.},
     \item una descrizione del viaggio,
-    \item l'alloggio,
+    \item le informazioni dei vari soggiorni,
     \item le varie tratte da fare per arrivare e tornare,
     \item l'assicurazione per il viaggio.
 \end{itemize}
 \end{multicols}
-Ogni viaggio deve fare riferimento ad una \textbf{polizza} assicurativa che viene identificata nel sistema attraverso un \underline{ID}, inoltre viene salvata: una descrizione della polizza e il nome dell'agenzia di assicurazione.
+Ogni viaggio può fare riferimento ad una \textbf{polizza} assicurativa che viene distinta attraverso un \underline{ID}, inoltre viene salvata: una descrizione della polizza e il nome dell'agenzia di assicurazione.
+%
+% Soggiorno
+%
+Un pacchetto può fornire più \emph{alloggi} (se si tratta di un viaggio a tappe), oppure può fornire un singolo alloggio per tutta la durata della vacanza (classico). Di ogni alloggio vengono riportate le \textbf{informazioni di soggiorno} che riportano: l'inizio e la fine del pernottamento, le informazione sulla struttura, le camere assegnate e la tipologia di camera. 
+
 %
 % Trasporto & tratte
 %
-Ogni pacchetto comprende già i mezzi da prendere per andare nelle varie destinazioni e per il ritorno, ogni mezzo percorre una tratta. I \textbf{mezzi di trasporto} sono identificati attraverso l'\underline{azienda} che mette a disposizione il veicolo e il \underline{codice mezzo} utilizzato dall'azienda. Vengono registrati per ogni \emph{tipologia} di mezzo le seguenti informazioni:
+Ogni pacchetto comprende già i mezzi da prendere per andare nelle varie destinazioni e per il ritorno, ogni mezzo percorre una tratta. I \textbf{mezzi di trasporto} riportano le seguenti informazioni: l'azienda che mette a disposizione il veicolo e il codice mezzo utilizzato dall'azienda. Vengono registrati per ogni \emph{tipologia} di mezzo le seguenti informazioni:
 l'\textbf{autobus} riporta il numero di linea,
 il \textbf{Treno} e la \textbf{Nave} riportano la classe,
 l'\textbf{aereo} riporta:
@@ -48,13 +53,15 @@ il check-in\footnote{Informazioni per il Check-in.},
 bagaglio in stiva\footnote{Viene indicato se è incluso nel pacchetto.},
 bagaglio a mano\footnote{Viene riportato il peso concesso.},
 il \textbf{Taxi} riporta il numero di telefono.
-
 %
 % Tratta
 %
-Di ogni \textbf{tratta} identificata attraverso: il \underline{il mezzo}, l'\underline{ora di partenza} e la \underline{data di partenza}. Inoltre ogni tratta riporta le seguente informazioni:
+Di ogni \textbf{tratta} viene salvato:
 \begin{multicols}{3}
     \begin{itemize}
+        \item il mezzo;
+        \item l'ora di partenza;
+        \item la data di partenza;
         \item orario di arrivo;
         \item data di arrivo;
         \item luogo di partenza;
@@ -65,8 +72,7 @@ Di ogni \textbf{tratta} identificata attraverso: il \underline{il mezzo}, l'\und
 %
 % Destinazioni / descrizione pacchetto & Aloggi
 %
-Un pacchetto può avere molteplici destinazione (viaggio con più tappe) oppure solo una destinazione (classico), inoltre vengono salvati anche gli \textbf{alloggi} dove il cliente soggiornerà durante il viaggio, per ogni alloggio viene identificato dalla \underline{città} in cui si trova e dal suo \underline{nome}, inoltre viene fornita una descrizione e il numero di stelle (da 0 a 5) dell'alloggio se disponibili. Gli alloggi vengono identificati dal \underline{nome} della struttura e dal \underline{luogo} in cu si trovano.
-
+Un pacchetto può avere molteplici destinazione oppure solo una destinazione, inoltre vengono salvati anche gli \textbf{alloggi} dove il cliente soggiornerà durante il viaggio, per ogni alloggio viene identificato dalla \underline{città} in cui si trova e dal suo \underline{nome}, inoltre viene fornita una descrizione, la tipologia di alloggio\footnote{Esempio: Hotel, bed and breakfast, eccetera.} e il numero di stelle (da 0 a 5) dell'alloggio se disponibili. Gli alloggi vengono identificati dal \underline{nome} della struttura e dal \underline{luogo} in cu si trovano.
 %
 % Città
 %
@@ -75,13 +81,13 @@ Le destinazioni di un pacchetto, il luogo di partenza/arrivo di ogni tratta, i l
 %
 % Recensioni
 %
-L'utente può scrivere delle \textbf{recensioni} per ogni pacchetto viaggio che ha acquistato e per l'agenzia che ha fornito la soluzione, le recensioni sono identificate da un \underline{ID}. Nella recensione viene salvato un giudizio su una scala da 0 a 5 e una motivazione del giudizio che può essere facoltativo.
-
+L'utente può scrivere delle \textbf{recensioni} per ogni pacchetto viaggio che ha acquistato e per l'alloggio che ha fornito la soluzione, le recensioni sono identificate da un \underline{ID}. Nella recensione viene salvato un giudizio su una scala da 0 a 5 e una motivazione che può essere facoltativa.
 %
 % Descrizione
 %
 Il pacchetto e l'alloggio devono avere una \textbf{descrizione} identificata univocamente da un \underline{codice}, dove troviamo: un titolo e una descrizione testuale.
-%
+
+
 
 \subsection{Glossario dei termini}
 \begin{center}
