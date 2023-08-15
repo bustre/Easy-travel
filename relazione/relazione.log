@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.11)  14 AUG 2023 17:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.11)  15 AUG 2023 10:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -987,7 +987,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 132--134
  []
 
 [3]) (./sections/conceptual_desing.tex
-<assets/ER_concettuale.png, id=142, 2824.5525pt x 2284.535pt>
+<assets/ER_concettuale.png, id=144, 2824.5525pt x 2284.535pt>
 File: assets/ER_concettuale.png Graphic file (type png)
 <use assets/ER_concettuale.png>
 Package pdftex.def Info: assets/ER_concettuale.png  used on input line 7.
@@ -1004,19 +1004,19 @@ Package rerunfilecheck Info: File `relazione.out' has not changed.
 (rerunfilecheck)             Checksum: 85C04F6F12B3D079CD8A42D8BDD74340;2667.
  ) 
 Here is how much of TeX's memory you used:
- 27539 strings out of 476091
- 558073 string characters out of 5794081
+ 27540 strings out of 476091
+ 558085 string characters out of 5794081
  1875330 words of memory out of 5000000
  47410 multiletter control sequences out of 15000+600000
  525161 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 94i,13n,94p,670b,1009s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 94i,13n,94p,651b,1009s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{Hfootnote.10} has been referenced but does not exis
+t, replaced by a fixed one
+
 
 pdfTeX warning (dest): name{Hfootnote.9} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{Hfootnote.8} has been referenced but does not exist
 , replaced by a fixed one
 
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/fo
@@ -1030,10 +1030,10 @@ ts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-s
 uper/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb></
 usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/font
 s/type1/public/cm-super/sftt1000.pfb>
-Output written on relazione.pdf (5 pages, 628744 bytes).
+Output written on relazione.pdf (5 pages, 629001 bytes).
 PDF statistics:
- 233 PDF objects out of 1000 (max. 8388607)
- 190 compressed objects within 2 object streams
- 38 named destinations out of 1000 (max. 500000)
+ 235 PDF objects out of 1000 (max. 8388607)
+ 192 compressed objects within 2 object streams
+ 39 named destinations out of 1000 (max. 500000)
  162 words of extra memory for PDF output out of 10000 (max. 10000000)
 

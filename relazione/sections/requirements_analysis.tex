@@ -9,12 +9,12 @@ Gli \textbf{utenti} che sono registrati alla piattaforma vengono identificati da
 %
 % Utente -> Cliente
 %
-All'interno del sistema esistono due tipologie di utenti: i \emph{clienti} e le \emph{agenzie}. Di ogni \textbf{cliente} vengono salvate delle informazioni aggiuntive: il nome, il cognome, la data di nascita, il sesso, e facoltativamente il numero di telefono. Mentre per ogni \textbf{agenzia} presente nel database viene salvato in aggiunta: il nome e la sede legale con l'indirizzo.
+All'interno del sistema esistono due tipologie di utenti: i \emph{clienti} e le \emph{agenzie}. Di ogni \textbf{cliente} sono di interesse le seguente informazioni: il nome, il cognome, la data di nascita, il sesso, e facoltativamente il numero di telefono. Mentre per ogni \textbf{agenzia} salviamo le seguenti informazioni aggiuntive: il nome e la sede legale con l'indirizzo.
 
 %
 % Clienti -> pacchetti
 %
-I clienti possono prenotare i pacchetti di viaggio forniti dalle agenzie. Per ogni \textbf{prenotazione} ci interessano le seguente informazioni: il cliente che ha eseguito la prenotazione, il timestamp dell'operazione, il numero di persone che partecipano alla vacanza e la transizione del pagamento.
+I clienti possono prenotare i pacchetti di viaggio forniti dalle agenzie. Per ogni \textbf{prenotazione} si tiene traccia di queste informazioni: il cliente che ha eseguito la prenotazione, il timestamp dell'operazione, il numero di persone che partecipano alla vacanza e la transizione del pagamento.
 %
 % Pagamento -> transizione
 %
@@ -22,30 +22,30 @@ Ogni \textbf{transizione} viene identificata da un \underline{codice} e riporta 
 %
 % Pacchetti
 %
-I \textbf{pacchetti} vengono identificati attraverso un \underline{ID} e sono inseriti nel sistema dalle agenzie, inoltre ogni soluzione di viaggio deve riportare le seguente informazioni:
+I \textbf{pacchetti} vengono identificati attraverso un \underline{ID} e sono inseriti nel sistema dalle agenzie. Di ogni soluzione di viaggio sono di interesse le seguente informazioni:
 \begin{multicols}{3}
 \begin{itemize}
     \item il prezzo\footnote{Per ogni singola persona.},
     \item la disponibilità\footnote{Numero di pacchetti ancora disponibili; non va confuso col il numero di partecipanti.},
     \item la data di partenza e di ritorno,
     \item il massimo numero di partecipanti\footnote{Il numero di persone massime che ammette un pacchetto di viaggio per un solo acquisto.},
-    \item una descrizione del viaggio,
+    \item una descrizione della vacanza,
     \item le informazioni dei vari soggiorni,
     \item le varie tratte da fare per arrivare e tornare,
     \item l'assicurazione per il viaggio.
 \end{itemize}
 \end{multicols}
-Ogni viaggio può fare riferimento ad una \textbf{polizza} assicurativa che viene distinta attraverso un \underline{ID}, inoltre viene salvata: una descrizione della polizza e il nome dell'agenzia di assicurazione.
+Ogni pacchetto può fare riferimento ad una \textbf{polizza} assicurativa che viene distinta attraverso un \underline{ID}, vengono salvate solo queste informazioni: una descrizione della polizza e il nome dell'agenzia di assicurazione.
 %
 % Soggiorno
 %
-Un pacchetto può fornire più \emph{alloggi} (se si tratta di un viaggio a tappe), oppure può fornire un singolo alloggio per tutta la durata della vacanza (classico). Di ogni alloggio vengono riportate le \textbf{informazioni di soggiorno} che riportano: l'inizio e la fine del pernottamento, le informazione sulla struttura, le camere assegnate e la tipologia di camera. 
+Un pacchetto può fornire più \emph{alloggi} (se si tratta di un viaggio a tappe), oppure può fornire un singolo alloggio per tutta la durata della vacanza (classico). Di ogni alloggio vengono riportate le \textbf{informazioni di soggiorno} che riportano: l'inizio e la fine del pernottamento, le informazione sulla struttura, le camere assegnate e la tipologia di camera\footnote{Esempio: matrimoniale, singola, eccetera.}. 
 
 %
 % Trasporto & tratte
 %
-Ogni pacchetto comprende già i mezzi da prendere per andare nelle varie destinazioni e per il ritorno, ogni mezzo percorre una tratta. I \textbf{mezzi di trasporto} riportano le seguenti informazioni: l'azienda che mette a disposizione il veicolo e il codice mezzo utilizzato dall'azienda. Vengono registrati per ogni \emph{tipologia} di mezzo le seguenti informazioni:
-l'\textbf{autobus} riporta il numero di linea,
+Ogni pacchetto comprende già i mezzi da prendere per arrivare alle varie destinazioni e per il ritorno, ogni mezzo percorre una tratta. I \textbf{mezzi di trasporto} riportano le seguenti informazioni: l'azienda che mette a disposizione il veicolo e il codice mezzo utilizzato dall'azienda. Vengono registrati per ogni \emph{tipologia} di mezzo le seguenti informazioni:
+l'\textbf{autobus} \textcolor{red}{riporta il numero di linea},
 il \textbf{Treno} e la \textbf{Nave} riportano la classe,
 l'\textbf{aereo} riporta:
 la classe,
@@ -56,7 +56,7 @@ il \textbf{Taxi} riporta il numero di telefono.
 %
 % Tratta
 %
-Di ogni \textbf{tratta} viene salvato:
+Di ogni \textbf{tratta} vengono salvati:
 \begin{multicols}{3}
     \begin{itemize}
         \item il mezzo;
@@ -72,7 +72,7 @@ Di ogni \textbf{tratta} viene salvato:
 %
 % Destinazioni / descrizione pacchetto & Aloggi
 %
-Un pacchetto può avere molteplici destinazione oppure solo una destinazione, inoltre vengono salvati anche gli \textbf{alloggi} dove il cliente soggiornerà durante il viaggio, per ogni alloggio viene identificato dalla \underline{città} in cui si trova e dal suo \underline{nome}, inoltre viene fornita una descrizione, la tipologia di alloggio\footnote{Esempio: Hotel, bed and breakfast, eccetera.} e il numero di stelle (da 0 a 5) dell'alloggio se disponibili. Gli alloggi vengono identificati dal \underline{nome} della struttura e dal \underline{luogo} in cu si trovano.
+Un pacchetto può avere molteplici destinazione oppure solo una destinazione, inoltre vengono salvati anche gli \textbf{alloggi} dove il cliente soggiornerà durante il viaggio, per ogni alloggio viene identificato dalla \underline{città} in cui si trova e dal suo \underline{nome}, inoltre viene fornita: una descrizione, la tipologia di alloggio\footnote{Esempio: Hotel, bed and breakfast, eccetera.} e il numero di stelle (da 0 a 5) dell'alloggio se disponibili.
 %
 % Città
 %
@@ -81,7 +81,7 @@ Le destinazioni di un pacchetto, il luogo di partenza/arrivo di ogni tratta, i l
 %
 % Recensioni
 %
-L'utente può scrivere delle \textbf{recensioni} per ogni pacchetto viaggio che ha acquistato e per l'alloggio che ha fornito la soluzione, le recensioni sono identificate da un \underline{ID}. Nella recensione viene salvato un giudizio su una scala da 0 a 5 e una motivazione che può essere facoltativa.
+L'utente può scrivere delle \textbf{recensioni} per ogni pacchetto viaggio che ha acquistato e per l'alloggio, le recensioni sono identificate da un \underline{ID}. Nella recensione viene salvato un giudizio su una scala da 0 a 5 e una motivazione che può essere facoltativa.
 %
 % Descrizione
 %
@@ -132,34 +132,36 @@ Il pacchetto e l'alloggio devono avere una \textbf{descrizione} identificata uni
 Nel caso d'uso perso in esame il numero di operazioni effettuate non hanno una distribuzione uniforme durante tutto l'anno, ma alcune operazioni in particolare presentano un numero di richieste maggiore durante i periodi di vacanza, cioè durante i periodi di \emph{massimo carico} per il sistema, mentre in altri periodi ci sono momenti di \emph{idle}. Riportiamo di seguito le operazioni considerando il massimo delle operazioni registrare per un certo periodo, dato che in contesti come questi la priorità è che il sistema riesca a soddisfare tutte le richieste.
 \newline
 \begin{center}
-    \begin{tabularx}{\textwidth}{L X >{\centering\arraybackslash}p{0.22\textwidth}}
+    \begin{tabularx}{\textwidth}{L X p{0.22\textwidth}}
         \caption{Tabella delle operazioni}\\\toprule\endfirsthead
         \toprule\endhead
         \midrule\multicolumn{3}{r}{\itshape Continua nella pagina successiva}\\\midrule\endfoot
         \bottomrule\endlastfoot
         %
         %
-        \textbf{Operazione} & \textbf{Descrizione dell'operazione} & \textbf{N°. operazioni}
+        \textbf{Operazione} & \textbf{Descrizione dell'operazione} & \textbf{N° operazioni}
         \\
         && (\textbf{operazioni/tempo})\footnote{Riportiamo le misure di tempo: \textbf{dd} = giorni, \textbf{mm} = mesi e \textbf{yy} = anni.}
         \\\midrule
         \emph{Inserimento pacchetto} & Inserimento di un pacchetto da parte di una agenzia & 10 o/dd
         \\\midrule
-        \emph{Inserimento descrizione} & Inserimento di una descrizione per un pacchetto o per un luogo di soggiorno & 15 o/dd
+        \emph{Inserimento descrizione} & Inserimento di una descrizione per un pacchetto o per un luogo di soggiorno & 5 o/dd
         \\\midrule
-        \emph{Inserimento mezzo} & Inserimento nuovo mezzo per un viaggio & 2 o/mm
+        \emph{Inserimento mezzo} & Inserimento di un nuovo mezzo per un viaggio & 15 o/mm
         \\\midrule
-        \emph{Iscrizione utente} & Un utente si iscrive al servizio & 40 o/dd
+        \emph{Inserimento tratta} & Inserimento di tratta & 60 o/mm
         \\\midrule
-        \emph{Inserimento recensione} & Un utente aggiunge una recensione & 3.000 o/mm
+        \emph{Iscrizione utente} & Un utente si iscrive al servizio & 2.000 o/mm
         \\\midrule
-        \emph{Ricerca pacchetti} & Ricerca dei pacchetti da parte degli utenti & 600.000 o/dd
+        \emph{Inserimento recensione} & Un utente aggiunge una recensione & 2.000 o/mm
+        \\\midrule
+        \emph{Ricerca pacchetti} & Ricerca dei pacchetti da parte degli utenti & 70.000 o/dd
         \\\midrule
         \emph{Inserimento agenzia} & Viene aggiunta una nuova agenzia & 3 o/mm
         \\\midrule
         \emph{Inserimento città} & Viene aggiunta una nuova città & 10 o/yy
         \\\midrule
-        \emph{Acquisto pacchetto} & Un cliente acquista un pacchetto & 100.000 o/gg
+        \emph{Acquisto pacchetto} & Un cliente compra un pacchetto & 5.000 o/gg
         \\\midrule
         \emph{Visualizzazione degli acquisti} & Un cliente vuole visualizzare gli acquisti passati & 90 o/gg
         \\
