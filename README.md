@@ -29,6 +29,7 @@
     - [] Regole aziendali
 - ### [] Requisiti progetto
     - [] Implementazione DB
+    - [] Inserire dati (generare la maggior parte con faker + cvs import)
     - [] Querry SQL
     - [] Indice
     - [] Software C++
