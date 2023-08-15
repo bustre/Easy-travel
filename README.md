@@ -13,3 +13,25 @@
 - ### Push delle attività al repo
     git push origin main software relazione
 
+## Stato attività
+- ### [x] Analisi requisiti
+    - [x] Descrizione
+    - [x] Dizionario termini
+    - [x] N° Operazioni
+- ### [] Progettazione concettuale
+    - [x] ER concettuale
+    - [] Tabella entità
+    - [] Tabella relazioni
+- ### [] Progettazione logica
+    - [] Analisi
+    - [] ER logico (o ristrutturato)
+    - [] Schema relazionale + vincoli esprimibili
+    - [] Regole aziendali
+- ### [] Requisiti progetto
+    - [] Implementazione DB
+    - [] Querry SQL
+    - [] Indice
+    - [] Software C++
+- ### [] Cose in più (se possibile)
+    - [] Transizioni 
+    - [] Trigger
