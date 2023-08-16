@@ -2,92 +2,13 @@
 \section{Raccolta e analisi dei requisiti}
 \subsection{Proprietà del sistema}
 
-%
-% Utenti 
-%
-Gli \textbf{utenti} che sono registrati alla piattaforma vengono identificati da uno \underline{username} scelto durante la fase di registrazione al servizio, inoltre vengono memorizzati per ogni utente: la password, l'email e la data di iscrizione al servizio.
-%
-% Utente -> Cliente
-%
-All'interno del sistema esistono due tipologie di utenti: i \emph{clienti} e le \emph{agenzie}. Di ogni \textbf{cliente} sono di interesse le seguente informazioni: il nome, il cognome, la data di nascita, il sesso, e facoltativamente il numero di telefono. Mentre per ogni \textbf{agenzia} salviamo le seguenti informazioni aggiuntive: il nome e la sede legale con l'indirizzo.
+Gli \textbf{utenti} che sono registrati nel sistema vengono identificati da uno \underline{username} scelto durante la fase di registrazione, inoltre si memorizzazione i seguenti dati: la password, l'email e la data di iscrizione. Gli utenti vengono classificati in due categorie: i \emph{clienti} e le \emph{agenzie}. Ogni \textbf{cliente} deve fornire le seguenti informazioni: il nome, il cognome, la data di nascita, il sesso e, in modo facoltativo, un numero di telefono. Mentre di ogni \textbf{agenzia} viene riportato: il nome commerciale e la sede legale con l'indirizzo.
 
-%
-% Clienti -> pacchetti
-%
-I clienti possono prenotare i pacchetti di viaggio forniti dalle agenzie. Per ogni \textbf{prenotazione} si tiene traccia di queste informazioni: il cliente che ha eseguito la prenotazione, il timestamp dell'operazione, il numero di persone che partecipano alla vacanza e la transizione del pagamento.
-%
-% Pagamento -> transizione
-%
-Ogni \textbf{transizione} viene identificata da un \underline{codice} e riporta i seguenti dati: la banca dove è avvenuto il pagamento, l'importo, il circuito bancario usato e l'ora con la data della avvenuta transizione.
-%
-% Pacchetti
-%
-I \textbf{pacchetti} vengono identificati attraverso un \underline{ID} e sono inseriti nel sistema dalle agenzie. Di ogni soluzione di viaggio sono di interesse le seguente informazioni:
-\begin{multicols}{3}
-\begin{itemize}
-    \item il prezzo\footnote{Per ogni singola persona.},
-    \item la disponibilità\footnote{Numero di pacchetti ancora disponibili; non va confuso col il numero di partecipanti.},
-    \item la data di partenza e di ritorno,
-    \item il massimo numero di partecipanti\footnote{Il numero di persone massime che ammette un pacchetto di viaggio per un solo acquisto.},
-    \item una descrizione della vacanza,
-    \item le informazioni dei vari soggiorni,
-    \item le varie tratte da fare per arrivare e tornare,
-    \item l'assicurazione per il viaggio.
-\end{itemize}
-\end{multicols}
-Ogni pacchetto può fare riferimento ad una \textbf{polizza} assicurativa che viene distinta attraverso un \underline{ID}, vengono salvate solo queste informazioni: una descrizione della polizza e il nome dell'agenzia di assicurazione.
-%
-% Soggiorno
-%
-Un pacchetto può fornire più \emph{alloggi} (se si tratta di un viaggio a tappe), oppure può fornire un singolo alloggio per tutta la durata della vacanza (classico). Di ogni alloggio vengono riportate le \textbf{informazioni di soggiorno} che riportano: l'inizio e la fine del pernottamento, le informazione sulla struttura, le camere assegnate e la tipologia di camera\footnote{Esempio: matrimoniale, singola, eccetera.}. 
+Ogni agenzia può offrire diversi \textbf{pacchetti viaggio}. Per ogni pacchetto vengono salvati i seguenti dati: la data di partenza, la data di ritorna, la disponibilità\footnote{Quanti pacchetti sono rimasti.}, il massimo numero di persone che possono partecipare al viaggio\footnote{Esempio: pacchetto famiglia da massimo 4 persone.}, il prezzo di base\footnote{Senza contare il costo dei vari mezzi da prendere per arrivare a destinazione} e un \underline{ID} per identificare univocamente il pacchetto. Ogni pacchetto inoltre riporta le \textbf{informazioni di soggiorno}, dove vengono salvate le informazioni sulle \emph{camere} e sull'\emph{alloggio}. Per ogni \textbf{camera} prenotata vengono riportate: la tipologia\footnote{Esempio: camera da letto, suite, singola, eccetera.} e il codice della camera assegnata. Tra le informazioni di soggiorno ci sono anche i dati dell'\textbf{alloggio}, identificato dal suo \underline{nome} e dalla \underline{città} in cui è ubicato con l'indirizzo, in più viene riportata la tipologia di struttura\footnote{Esempio Hotel, eccetera.} e il numero di stelle se disponibili. Sia il pacchetto di viaggio e l'alloggio hanno una \textbf{descrizione} testuale che viene identificata nel sistema da un \underline{ID}, dove viene riportato: un titolo della descrizione e un testo.
 
-%
-% Trasporto & tratte
-%
-Ogni pacchetto comprende già i mezzi da prendere per arrivare alle varie destinazioni e per il ritorno, ogni mezzo percorre una tratta. I \textbf{mezzi di trasporto} riportano le seguenti informazioni: l'azienda che mette a disposizione il veicolo e il codice mezzo utilizzato dall'azienda. Vengono registrati per ogni \emph{tipologia} di mezzo le seguenti informazioni:
-l'\textbf{autobus} \textcolor{red}{riporta il numero di linea},
-il \textbf{Treno} e la \textbf{Nave} riportano la classe,
-l'\textbf{aereo} riporta:
-la classe,
-il check-in\footnote{Informazioni per il Check-in.},
-bagaglio in stiva\footnote{Viene indicato se è incluso nel pacchetto.},
-bagaglio a mano\footnote{Viene riportato il peso concesso.},
-il \textbf{Taxi} riporta il numero di telefono.
-%
-% Tratta
-%
-Di ogni \textbf{tratta} vengono salvati:
-\begin{multicols}{3}
-    \begin{itemize}
-        \item il mezzo;
-        \item l'ora di partenza;
-        \item la data di partenza;
-        \item orario di arrivo;
-        \item data di arrivo;
-        \item luogo di partenza;
-        \item luogo di arrivo.
-    \end{itemize}
-\end{multicols}
+Un cliente può scrivere un \emph{recensione} per l'alloggio alla fine del viaggio. Le \textbf{recensioni} sono identificate da un \underline{ID} interno e riportano: un giudizio (con una scala da 0 a 5) e una motivazione testuale che può essere facoltativa. Un cliente può \emph{prenotare} un pacchetto, nella \textbf{prenotazione} vengono salvati: il numero di persone che partecipano al viaggio, la data di acquisto, i dati della transizione di pagamento e, facoltativamente le informazioni di trasporto per arrivare a destinazione e per il ritorno. Una \textbf{transizione} riporta: un \underline{codice} identificativo, la banca che ha preso in carico l'operazione, l'importo totale, il circuito usato e il timestamp in cui è avvenuta l'operazione. Per ogni prenotazione si può sceglie anche l'offerta più convenite di trasporto. Il \textbf{trasporto} riporta: il prezzo, la data di arrivo, la data di partenza e l'ora di partenza. Vengono inoltre salvati per ogni tratta la città di partenza e la città di arrivo. Per ogni info-trasporto vengono viene riportato anche il \textbf{mezzo utilizzato}, dove viene riportato il codice mezzo e il nome dell'azienda che offre il servizio. I mezzi si dividono in 3 categorie principali: treno dove viene riporta la classe, l'aereo dove vengono riportati: la classe, le info di check-in, la possibilità di avere un baglio in stiva o a mano, in fine c'è il \textbf{taxi} che riporta il numero telefonico del conducente.
 
-%
-% Destinazioni / descrizione pacchetto & Aloggi
-%
-Un pacchetto può avere molteplici destinazione oppure solo una destinazione, inoltre vengono salvati anche gli \textbf{alloggi} dove il cliente soggiornerà durante il viaggio, per ogni alloggio viene identificato dalla \underline{città} in cui si trova e dal suo \underline{nome}, inoltre viene fornita: una descrizione, la tipologia di alloggio\footnote{Esempio: Hotel, bed and breakfast, eccetera.} e il numero di stelle (da 0 a 5) dell'alloggio se disponibili.
-%
-% Città
-%
-Le destinazioni di un pacchetto, il luogo di partenza/arrivo di ogni tratta, i luoghi dove si trovano i soggiorni per il viaggio e la sede legale di un'agenzia sono delle \emph{città}. Una \textbf{città} viene identificata da un \underline{codice interno}, vengono riportate le seguente informazioni: nome della città e nome del stato in cui si trova.
-
-%
-% Recensioni
-%
-L'utente può scrivere delle \textbf{recensioni} per ogni pacchetto viaggio che ha acquistato e per l'alloggio, le recensioni sono identificate da un \underline{ID}. Nella recensione viene salvato un giudizio su una scala da 0 a 5 e una motivazione che può essere facoltativa.
-%
-% Descrizione
-%
-Il pacchetto e l'alloggio devono avere una \textbf{descrizione} identificata univocamente da un \underline{codice}, dove troviamo: un titolo e una descrizione testuale.
-
-
+Ogni luogo è riconosciuto nel sistema come una \textbf{città} identificata da un codice interno, vengono salvati: il nome e il paese dove si trova la città.
 
 \subsection{Glossario dei termini}
 \begin{center}
@@ -115,7 +36,7 @@ Il pacchetto e l'alloggio devono avere una \textbf{descrizione} identificata uni
         \\\midrule
         \textbf{Prenotazione} & Comprare un pacchetto di viaggio & Acquisto, comprare & Cliente, Pacchetto Viaggio
         \\\midrule
-        \textbf{Tratta} & Tratta percorsa da un mezzo di trasporto & & Mezzo Trasporto, Città, Pacchetto di Viaggio
+        \textbf{Trasporto} & Tratta percorsa da un mezzo di trasporto & & Mezzo Trasporto, Città, Pacchetto di Viaggio
         \\\midrule
         \textbf{Recensione} & Giudizio del cliente testuale e numerico basato su una scala da 0 a 5 & & Cliente, Agenzia, Pacchetto 
         \\\midrule
@@ -149,7 +70,7 @@ Nel caso d'uso perso in esame il numero di operazioni effettuate non hanno una d
         \\\midrule
         \emph{Inserimento mezzo} & Inserimento di un nuovo mezzo per un viaggio & 15 o/mm
         \\\midrule
-        \emph{Inserimento tratta} & Inserimento di tratta & 60 o/mm
+        \emph{Inserimento trasporto} & Inserimento informazioni e dati riguardanti il servizio di trasporto & 60 o/mm
         \\\midrule
         \emph{Iscrizione utente} & Un utente si iscrive al servizio & 2.000 o/mm
         \\\midrule
