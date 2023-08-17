@@ -14,12 +14,13 @@
     git push origin main software relazione
 
 ## Stato attività
-- ### [x] Analisi requisiti
-    - [x] Descrizione
-    - [x] Dizionario termini
-    - [x] N° Operazioni
+- ### [ ] Abstract
+- ### [] Analisi requisiti
+    - [] Descrizione
+    - [] Dizionario termini
+    - [] N° Operazioni
 - ### [] Progettazione concettuale
-    - [x] ER concettuale
+    - [] ER concettuale
     - [] Tabella entità
     - [] Tabella relazioni
 - ### [] Progettazione logica
