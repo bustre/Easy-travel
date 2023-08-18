@@ -20,9 +20,9 @@
     - [x] Dizionario termini
     - [x] N° Operazioni (continuare)
 - ### [] Progettazione concettuale
-    - [] ER concettuale
-    - [] Tabella entità
-    - [] Tabella relazioni
+    - [x] ER concettuale
+    - [x] Tabella entità
+    - [x] Tabella relazioni
 - ### [] Progettazione logica
     - [] Analisi
     - [] ER logico (o ristrutturato)
