@@ -15,10 +15,10 @@
 
 ## Stato attività
 - ### [ ] Abstract
-- ### [] Analisi requisiti
-    - [] Descrizione
-    - [] Dizionario termini
-    - [] N° Operazioni
+- ### [x] Analisi requisiti
+    - [x] Descrizione
+    - [x] Dizionario termini
+    - [x] N° Operazioni (continuare)
 - ### [] Progettazione concettuale
     - [] ER concettuale
     - [] Tabella entità
