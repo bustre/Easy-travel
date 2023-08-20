@@ -14,26 +14,27 @@
     git push origin main software relazione
 
 ## Stato attività
-- ### [ ] Abstract
-- ### [x] Analisi requisiti
+- ### Abstract
+    - [x] Abstract
+- ### Analisi requisiti
     - [x] Descrizione
     - [x] Dizionario termini
-    - [x] N° Operazioni (continuare)
-- ### [] Progettazione concettuale
-    - [x] ER concettuale
-    - [x] Tabella entità
-    - [x] Tabella relazioni
-- ### [] Progettazione logica
+    - [x] N° Operazioni
+- ### Progettazione concettuale
+    - [] ER concettuale
+    - [] Tabella entità
+    - [] Tabella relazioni
+- ### Progettazione logica
     - [] Analisi
     - [] ER logico (o ristrutturato)
     - [] Schema relazionale + vincoli esprimibili
     - [] Regole aziendali
-- ### [] Requisiti progetto
+- ### Requisiti progetto
     - [] Implementazione DB
     - [] Inserire dati (generare la maggior parte con faker + cvs import)
     - [] Querry SQL
     - [] Indice
     - [] Software C++
-- ### [] Cose in più (se possibile)
+- ### Cose in più (se possibile)
     - [] Transizioni 
     - [] Trigger
