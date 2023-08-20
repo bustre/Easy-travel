@@ -19,11 +19,11 @@
 - ### Analisi requisiti
     - [x] Descrizione
     - [x] Dizionario termini
-    - [x] N° Operazioni
+    - [-] N° Operazioni; se viene in mente altro aggiugnere
 - ### Progettazione concettuale
-    - [] ER concettuale
-    - [] Tabella entità
-    - [] Tabella relazioni
+    - [x] ER concettuale
+    - [x] Tabella entità
+    - [x] Tabella relazioni
 - ### Progettazione logica
     - [] Analisi
     - [] ER logico (o ristrutturato)
@@ -38,3 +38,6 @@
 - ### Cose in più (se possibile)
     - [] Transizioni 
     - [] Trigger
+
+#### Problemi
+    - Provare a usare immagini SVG
