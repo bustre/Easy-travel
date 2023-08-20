@@ -1,5 +1,8 @@
 # Progetto basi di dati
 
+## Link veloci
+- [Relazione](relazione/relazione.pdf)
+
 ## Branch
 - relazione: dedicato a tutte le attività strettamente correlate con la stesura della relazione
 - software: dedicato allo sviluppo del programma
@@ -25,10 +28,10 @@
     - [x] Tabella entità
     - [x] Tabella relazioni
 - ### Progettazione logica
-    - [] Analisi
-    - [] ER logico (o ristrutturato)
+    - [x] Analisi
+    - [x] ER logico (o ristrutturato)
     - [] Schema relazionale + vincoli esprimibili
-    - [] Regole aziendali
+    - [x] Regole aziendali
 - ### Requisiti progetto
     - [] Implementazione DB
     - [] Inserire dati (generare la maggior parte con faker + cvs import)
