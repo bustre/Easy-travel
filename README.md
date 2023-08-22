@@ -30,7 +30,7 @@
 - ### Progettazione logica
     - [x] Analisi
     - [x] ER logico (o ristrutturato)
-    - [] Schema relazionale + vincoli esprimibili
+    - [x] Schema relazionale + vincoli esprimibili
     - [x] Regole aziendali
 - ### Requisiti progetto
     - [] Implementazione DB

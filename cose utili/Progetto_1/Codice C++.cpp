@@ -119,7 +119,7 @@ int main(int argc, char** argv) {
     cout << "Password: ";
     char pass[50];
     cin >> pass;
-    PGconn* conn = connect("127.0.0.1", "postgres", "Flash Delivering", pass, "5432");
+    PGconn* conn = connect("192.168.0.104", "postgres", "Flash Delivering", pass, "5432");
 
     const char* query[6] = {
         "select stelleristorante, testo, rider, stellerider \
