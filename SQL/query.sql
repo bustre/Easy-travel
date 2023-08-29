@@ -1,25 +1,24 @@
--- Trovare tutti i clienti riportando: Nome, Cognome e email, che hanno effettuato almeno una recensione con il voto
--- superiore a 3 stelle, e specificarne il nome dell'alloggio per cui è stata scritta la recensione, il giudizio dato e
--- la motivazione se disponibile
+-- Trovare tutti i clienti riportando: Nome, Cognome e email, che hanno effettuato almeno una recensione con un voto
+-- superiore o uguale a x stelle, e specificarne il nome dell'alloggio per cui è stata scritta la recensione, il giudizio 
+-- dato e la motivazione se disponibile, nel caso tale informazione non fosse disponibile sostituire NULL con la stringa
+-- '* Nessuna motivazione fornita'. Per l'esempio x = 3
 
-SELECT DATI_CLIENTE.NOME,
-       DATI_CLIENTE.COGNOME,
-       NOME_ALLOGGIO,
-       R.GIUDIZIO,
-       R.MOTIVAZIONE
-  FROM DATI_CLIENTE
+SELECT D.NOME, D.COGNOME, A.NOME, R.GIUDIZIO,
+       COALESCE(R.MOTIVAZIONE,'* Nessuna motivazione fornita')
+  FROM DATI_CLIENTE AS D
   JOIN CLIENTE AS C
-    ON DATI_CLIENTE.EMAIL = C.EMAIL
+    ON D.EMAIL_CLIENTE = C.EMAIL
   JOIN RECENSIONE AS R
     ON C.EMAIL = R.EMAIL_CLIENTE
   JOIN ALLOGGIO AS A
     ON R.ID_CITTA_ALLOGGIO = A.ID_CITTA
    AND R.NOME_ALLOGGIO = A.NOME
- WHERE GIUDIZIO > 3;
+ WHERE GIUDIZIO >= 3;
+ 
  
 -- Per ciascuna compagnia aerea fornire: il nome della compagnia, il numero di prenotazioni, il numero totale di voli
 -- che sono stati prenotati compagnia aerea, la media prezzi dei voli offerti, il prezzo massimo devi voli offerti
--- finora, e il prezzo minimo dei voli offerto finora,
+-- finora, e il prezzo minimo dei voli offerto finora. In fine si riordini in modo decrescente per numero voli.
 
 SELECT C.NOME AS NOME_COMPAGNIA,
        COUNT(V.CODICE) AS NUMERO_VOLI,
@@ -31,45 +30,8 @@ SELECT C.NOME AS NOME_COMPAGNIA,
     ON C.EMAIL = V.EMAIL_COMPAGNIA
  GROUP BY C.NOME
 HAVING COUNT(V.CODICE) > 10
- ORDER BY NUMEROVOLI DESC;
+ ORDER BY NUMERO_VOLI DESC;
  
--- Dato un cliente. Per ogni acquisto recuperare: tutte le informazioni della transizione, il totale per il trasporto, 
--- il costo di base del pacchetto a persona, il numero di persone partecipanti e il numero di voli per quel viaggio.
--- Cliente per l'esempio: Renzo.Camanni@email.com
-
-SELECT P.NUMEROPERSONE AS NUMERO_PARTECIPANTI,
-       T.CODICE,
-       T.BANCA,
-       T.IMPORTO,
-       T.CIRCUITO,
-       T.DATAORA,
-       I.PREZZO_TOTALE AS TOTALE_TRASPORTO,
-       PV.PREZZO AS PREZZO_PACCHETTO,
-       DATI_VOLI.VOLI_TOTALI AS VOLI_PRESI
-  FROM
-        (SELECT ANDATA_RITORNO.CODICE_TRANSAZIONE,
-               COUNT(*) AS VOLI_TOTALI
-          FROM
-                (SELECT *
-                  FROM ANDATA
-                 UNION SELECT *
-                  FROM RITORNO
-               ) AS ANDATA_RITORNO
-
-         GROUP BY ANDATA_RITORNO.CODICE_TRANSAZIONE
-       ) AS DATI_VOLI,
-
-       PRENOTAZIONE AS P,
-       TRANSAZIONE AS T,
-       INFORMAZIONI_TRASPORTO AS I,
-       PACCHETTO_VIAGGIO AS PV
-
- WHERE 'Renzo.Camanni@email.com' = P.EMAIL_CLIENTE
-   AND P.CODICE_TRANSAZIONE = T.CODICE
-   AND T.CODICE = I.CODICE_TRANSAZIONE
-   AND I.CODICE_TRANSAZIONE = DATI_VOLI.CODICE_TRANSAZIONE
-   AND PV.ID = P.ID_PACCHETTO_VIAGGIO;
-
  
 -- Riportare per ogni agenzia il numero di pacchetti offerti, in media quanto costano i loro pacchetti e la media delle
 -- recensioni ricevute sugli alloggi offerti
@@ -105,10 +67,64 @@ SELECT AGENZIA.DENOMINAZIONE,
    AND MEDIA_PREZZI.EMAIL = MEDIA_REC.EMAIL
    AND MEDIA_REC.EMAIL = AGENZIA.EMAIL;
    
+   
+-- Dato un cliente. Per ogni acquisto recuperare: tutte le informazioni della transizione, il totale per il trasporto,
+-- il costo di base del pacchetto a persona, il numero di persone partecipanti e il numero di voli per quel viaggio.
+-- Si includano inoltre gli utenti che non hanno prenotato il trasporto attraverso il servizio, e si riporti in quel
+-- caso il valore 0 sia per il totale trasporto che per il numero di voli.
+-- Cliente per l'esempio: Annibale.Boezio@fastmail.org.
+ 
+SELECT DATI_PRENOTAZIONE.CODICE, 
+       DATI_PRENOTAZIONE.NUMERO_PERSONE AS NUMERO_PARTECIPANTI, 
+       DATI_PRENOTAZIONE.BANCA, 
+       DATI_PRENOTAZIONE.IMPORTO, 
+       DATI_PRENOTAZIONE.CIRCUITO, 
+       DATI_PRENOTAZIONE.DATAORA, 
+       DATI_PRENOTAZIONE.PREZZO AS PREZZO_PACCHETTO, 
+       COALESCE(INFO_TRASPORTO.PREZZO_TOTALE, 
+           0) AS TOTALE_TRASPORTO, 
+       COALESCE(INFO_TRASPORTO.VOLI_TOTALI, 
+           0) AS VOLI_PRESI 
+  FROM 
+        (SELECT I.CODICE_TRANSAZIONE AS CODICE,      
+               I.PREZZO_TOTALE, 
+               DATI_VOLI.VOLI_TOTALI 
+          FROM 
+                (SELECT ANDATA_RITORNO.CODICE_TRANSAZIONE,   
+                       COUNT(*) AS VOLI_TOTALI 
+                  FROM 
+                        (SELECT * 
+                          FROM ANDATA 
+                     UNION ALL SELECT * 
+                          FROM RITORNO
+                       ) AS ANDATA_RITORNO 
+                 GROUP BY ANDATA_RITORNO.CODICE_TRANSAZIONE
+               ) AS DATI_VOLI, 
+               INFORMAZIONI_TRASPORTO AS I 
+         WHERE I.CODICE_TRANSAZIONE = DATI_VOLI.CODICE_TRANSAZIONE 
+       ) AS INFO_TRASPORTO 
 
--- Algoritmo di ricerca per i pacchetti: fornita una data, cercare tutti i pacchetti viaggio che si svolgono dopo quella
+ RIGHT JOIN 
+        (SELECT T.CODICE, 
+               T.DATAORA, 
+               T.IMPORTO, 
+               T.CIRCUITO, 
+               T.BANCA, 
+               P.NUMERO_PERSONE, 
+               PV.PREZZO 
+          FROM PRENOTAZIONE AS P, 
+               TRANSAZIONE AS T, 
+               PACCHETTO_VIAGGIO AS PV 
+         WHERE 'Annibale.Boezio@fastmail.org' = P.EMAIL_CLIENTE
+           AND P.CODICE_TRANSAZIONE = T.CODICE
+           AND PV.ID = P.ID_PACCHETTO_VIAGGIO
+       ) AS DATI_PRENOTAZIONE
+    ON INFO_TRASPORTO.CODICE = DATI_PRENOTAZIONE.CODICE;
+    
+
+-- Algoritmo per mostrare i pacchetti: fornita una data, cercare tutti i pacchetti viaggio che si svolgono dopo quella
 -- data. Eliminare i pacchetti che non sono più disponibili (perché già prenotati tutti) dai risultati. Riportare le
--- seguenti informazioni esenziali: il titolo della descrizione del pacchetto, la data di partenza, la data di ritorno,
+-- seguenti informazioni essenziali: il titolo della descrizione del pacchetto, la data di partenza, la data di ritorno,
 -- il prezzo, il numero di persone, il nome dell'alloggio e la destinazione.
 -- Esempio con 11-04-2022. Ordinarli per data di partenza in ordine crescente.
  
@@ -149,3 +165,96 @@ SELECT D.TITOLO,
  WHERE D.ID = DISPONIBILI.ID_DESCRIZIONE
    AND C.ID = DISPONIBILI.ID_CITTA_ALLOGGIO
  ORDER BY DISPONIBILI.DATA_PARTENZA;
+ 
+
+-- Si trovi tutti i voli da una aeroporto x ad un aeroporto y che attraverso gli scali costano meno del
+-- viaggio diretto. Di ogni volo con scalo si riporti solo il codice del volo di partenza, la data/ora,
+-- il codice del volo di arrivo, la data/ora di arrivo, il numero di scali, il prezzo contando tutti voli
+-- dello scalo, il risparmio (differenza totale con scali e senza scali), il tempo totale di viaggio (
+-- somma dei voli, senza contare le attese al terminale). Nota: il totale prezzo dei voli è per persona.
+-- Nell'esempio: x.codice = 'EOCM' e y.codice = 'PQAS'
+
+WITH RECURSIVE POSSIBILI_SCALI(
+    PRIMO_VOLO, -- Tiene traccia della partenza
+    VOLO_ATTUALE,
+    AEROPORTO_PARTENZA,
+    TIMESTAMP_PARTENZA,
+    AEROPORTO_ARRIVO,
+    TIMESTAMP_ARRIVO,
+    NUMERO_SCALI,
+    TOTALE_PREZZO,
+    DURATA_TOTALE_VIAGGIO
+) AS (
+    (
+        SELECT
+            VOLO.CODICE AS PRIMO_VOLO,
+            VOLO.CODICE AS VOLO_ATTUALE,
+            AEROPORTO_PARTENZA,
+            TIMESTAMP_PARTENZA,
+            AEROPORTO_ARRIVO,
+            TIMESTAMP_ARRIVO,
+            0 AS NUMERO_SCALI,
+            CAST(
+                VOLO.PREZZO AS NUMERIC(
+                    7,
+                    2
+                )
+            ) AS TOTALE_PREZZO,
+            (TIMESTAMP_ARRIVO - TIMESTAMP_PARTENZA) AS DURATA_TOTALE_VIAGGIO
+        FROM
+            VOLO
+    )
+    UNION
+    ALL --Ricorsione
+    (
+        SELECT
+            POSSIBILI_SCALI.PRIMO_VOLO,
+            SUCCESSIVO.CODICE AS VOLO_ATTUALE,
+            SUCCESSIVO.AEROPORTO_PARTENZA,
+            SUCCESSIVO.TIMESTAMP_PARTENZA,
+            SUCCESSIVO.AEROPORTO_ARRIVO,
+            SUCCESSIVO.TIMESTAMP_ARRIVO,
+            POSSIBILI_SCALI.NUMERO_SCALI + 1 AS NUMERO_SCALI,
+            CAST(
+                POSSIBILI_SCALI.TOTALE_PREZZO + SUCCESSIVO.PREZZO AS NUMERIC(
+                    7,
+                    2
+                )
+            ) AS TOTALE_PREZZO,
+            (
+                POSSIBILI_SCALI.DURATA_TOTALE_VIAGGIO + (
+                    SUCCESSIVO.TIMESTAMP_ARRIVO - SUCCESSIVO.TIMESTAMP_PARTENZA
+                )
+            ) AS DURATA_TOTALE_VIAGGIO
+        FROM
+            VOLO AS SUCCESSIVO,
+            POSSIBILI_SCALI
+        WHERE
+            SUCCESSIVO.AEROPORTO_PARTENZA = POSSIBILI_SCALI.AEROPORTO_ARRIVO
+            AND SUCCESSIVO.TIMESTAMP_PARTENZA > POSSIBILI_SCALI.TIMESTAMP_ARRIVO
+    )
+) -- Nota: tra le tuple di possibili_scali ci sono anche i voli diretti
+SELECT
+    DIRETTO.PRIMO_VOLO AS DIRETTO_CODICE,
+    DIRETTO.TIMESTAMP_PARTENZA AS DIRETTO_PARTENZA,
+    DIRETTO.TIMESTAMP_ARRIVO AS DIRETTO_ARRIVO,
+    DIRETTO.TOTALE_PREZZO AS DIRETTO_PREZZO,
+    SCALI.PRIMO_VOLO AS SCALO_PARTENZA_CODICE,
+    SCALI.VOLO_ATTUALE AS SCALO_ARRIVO_CODICE,
+    V.TIMESTAMP_PARTENZA AS SCALO_PARTENZA,
+    SCALI.TIMESTAMP_ARRIVO AS SCALO_ARRIVO,
+    SCALI.NUMERO_SCALI,
+    SCALI.TOTALE_PREZZO AS SCALO_PREZZO,
+    SCALI.DURATA_TOTALE_VIAGGIO
+FROM
+    POSSIBILI_SCALI AS DIRETTO,
+    POSSIBILI_SCALI AS SCALI,
+    VOLO AS V -- V Serve a ottenere le informazioni del primo volo di partenza
+WHERE
+    DIRETTO.NUMERO_SCALI = 0
+    AND DIRETTO.AEROPORTO_PARTENZA = 'EOCM'
+    AND DIRETTO.AEROPORTO_ARRIVO = 'PQAS'
+    AND DIRETTO.TOTALE_PREZZO > SCALI.TOTALE_PREZZO
+    AND SCALI.NUMERO_SCALI > 0
+    AND SCALI.AEROPORTO_ARRIVO = DIRETTO.AEROPORTO_ARRIVO
+    AND SCALI.PRIMO_VOLO = V.CODICE;

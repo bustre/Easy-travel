@@ -165,7 +165,7 @@ CREATE TABLE Volo(
     Classe varchar(20) NOT NULL,
     CHECK_In varchar(15) NOT NULL,
     Prezzo NUMERIC(
-        5,
+        7,
         2
     ) NOT NULL,
     email_Compagnia varchar(40) NOT NULL,
@@ -251,7 +251,7 @@ CREATE TABLE Pacchetto_Viaggio(
 CREATE TABLE Prenotazione(
     Codice_Transazione varchar(16) PRIMARY KEY,
     email_cliente varchar(40),
-    NumeroPersone NUMERIC(
+    Numero_Persone NUMERIC(
         2,
         0
     ) NOT NULL,
@@ -271,7 +271,7 @@ CREATE TABLE Prenotazione(
                 UPDATE
                     CASCADE,
                     CHECK (
-                        NumeroPersone >= 1
+                        Numero_Persone >= 1
                     )
 );
 
