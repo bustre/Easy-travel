@@ -1,4 +1,5 @@
 .vscode/
-project/project.out
+project/app.out
+project/app.exe
 project/Makefile
 .*
