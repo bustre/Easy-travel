@@ -4,7 +4,7 @@ import random
 from datetime import datetime, timedelta
 from faker_airtravel import AirTravelProvider
 
-random.seed(datetime.now().ctime())
+random.seed(2042383, version=2)
 
 fake = Faker()
 fake_airlines = Faker()
@@ -13,14 +13,14 @@ Faker.seed(0)
 
 # Impostazioni generali
 sqlFile = open("data.sql","w")
-numeroClienti = 100
+numeroClienti = 30
 numeroCompagnie = 3
 numeroBagagli = 10
 numeroCittà = 30
 numeroPacchetti = 15
 numeroAgenzie = 3
 numeroAlloggi = int(numeroPacchetti * 0.50) # Gli alloggi sono il 60 % dei pacchetti
-n_acquisti = 500
+n_acquisti = 30
 
 
 ### Strutture dati
@@ -43,7 +43,7 @@ class Cliente:
             return "'M'"
 
     def __phone(self):
-            return  fake.country_calling_code() + " " + fake.msisdn()[0:9]
+            return  "+39" + " " + fake.msisdn()[0:9]
     
     def __randomEmail(self):
         p = random.randint(0,100)
@@ -51,9 +51,9 @@ class Cliente:
         if (p <= 2):
             return fake.unique.email()
         elif (p <= 60):
-            return self.nome + "." + self.cognome + random.choice(["@email.com", "@fastmail.org", "@ok.net"])
+            return self.nome + "." + self.cognome + random.choice(["@email.com", "@fastmail.org", "@lambda.mail.it"])
         else:
-            return self.cognome + str(p) + "@" + self.cognome + random.choice(["@email.com", "@fastmail.org", "@ok.net"])
+            return self.cognome + str(p) + "@" + self.cognome + random.choice(["@email.com", "@fastmail.org", "@lambda.mail.it"])
         
 
     def __init__(self):
@@ -64,7 +64,7 @@ class Cliente:
         self.cognome = fake.last_name()
         self.password = fake.password(random.randint(8,24))
         self.email = self.__randomEmail()
-        self.data_iscrizione =  datetime.combine(fake.date_between(start_date='-5y', end_date='-3y'), fake.time_object())
+        self.data_iscrizione =  datetime.combine(fake.date_between(start_date='-5y', end_date='-4y'), fake.time_object())
         self.data_nascita = fake.date_between(start_date='-50y', end_date='-22y')
 
         self.telefono = self.__phone()
@@ -147,14 +147,18 @@ class InformazioniBagagli:
     def __str__(self):
         return f"INSERT INTO INFORMAZIONI_BAGAGLI VALUES ('{self.id}', {self.bagaglioMano}, {self.bagaglioStiva});\n"
 
+external_strange_unique_counter = 0
 class Descrizione:
+
     def __hash__(self) -> int:
         return hash(self.id)
 
-    def __init__(self, id, titolo, body) -> None:
+    def __init__(self, id, titolo, body, tipologia, luogo="") -> None:
         self.id = id
-        self.titolo = titolo
-        self.body = body
+        self.tipologia = tipologia
+        self.luogo = luogo
+        self.titolo = titolo.replace("'","''")
+        self.body = body.replace("'","''")
 
     def __eq__(self, __value: object) -> bool:
         return self.titolo == __value.titolo and self.body == __value.body
@@ -188,9 +192,9 @@ class Città:
         return f"INSERT INTO Citta VALUES ('{self.id}','{self.nome}', '{self.stato}');\n"
 
 class Alloggio:
-    def __random(self):
+    def __randomScelta(self):
         alloggi_vacanze = [
-            ("Hotel", "The Royal Palm Resort", ""),
+            ("Hotel", "The Royal Palm Resort"),
             ("Casa", "Villetta Solemar"),
             ("Appartamento", "Appartamento La Terrazza"),
             ("Suite", "Suite Belle Époque"),
@@ -246,7 +250,7 @@ class Alloggio:
         return self.id_città == __value.id_città and self.nome == __value.nome
 
     def __init__(self, id_città, id_descrizione) -> None:
-        self.__random()
+        self.__randomScelta()
         self.id_città = id_città
         self.valore_atteso = random.uniform(0,5)
         self.stelle = self.__randomStar()
@@ -451,7 +455,7 @@ class Transazione:
         return f"INSERT INTO TRANSAZIONE VALUES ('{self.codice}', '{self.banca}', {self.importo}, '{self.circuito}', '{self.timestamp}');\n"
 
 class Volo:
-    def __randomClass(self,force):
+    def __randomClass(self,tipologia, force):
         tipologie_di_volo = [
             ("Economy", 1.0),
             ("Economy Standard", 1.0),
@@ -462,20 +466,22 @@ class Volo:
             ("Business Deluxe", 1.8)
         ]
 
+    
         if force == -1:
             self.tipologia, self.prezzo = tipologie_di_volo[random.randint(0, len(tipologie_di_volo)-1)]
-        else:
             self.prezzo *= round(random.uniform(40, 80),2)
+        else:
+            self.tipologia, self.prezzo = tipologia, force
 
     def __randomCheckin(self):
         lcheckin = ['Online', 'Aeroporto']
 
         self.checkin = lcheckin[random.randint(0, len(lcheckin)-1)]
 
-    def __init__(self, codice, email, partenza, arrivo, tpartenza, tarrivo, id_bagagli, force=-1) -> None:
+    def __init__(self, codice, email, partenza, arrivo, tpartenza, tarrivo, id_bagagli, force=-1, tipologia=None) -> None:
         self.codice = codice
         self.email = email
-        self.__randomClass(force)
+        self.__randomClass(tipologia, force)
         self.__randomCheckin()
         self.partenza = partenza
         self.arrivo = arrivo
@@ -630,10 +636,10 @@ def FiltraClienti(lista_clienti, pacchetto, lista_prenotazioni):
     tmp = []
 
     for x in lista_clienti:
-        if x.data_iscrizione.date() > pacchetto.dataPartenza:
+        if x.data_iscrizione.date() < pacchetto.dataPartenza:
             già_viaggio = False
             for p in lista_prenotazioni:
-                if p.cliente.email == x.email and (p.inizio <= pacchetto.dataPartenza <= p.fine or p.inizio <= pacchetto.dataArrivo <= p.fine):
+                if p.cliente.email == x.email and (p.inizio <= pacchetto.dataPartenza <= p.fine or p.inizio <= pacchetto.dataRitorno <= p.fine):
                     già_viaggio = True
             if not già_viaggio:
                 tmp.append(x)
@@ -700,29 +706,98 @@ lista_polizze = [
     Polizza(0, "Polizza di Viaggio Base", open("polizze/base.txt","r").read())
 ]
 
+alloggi = [
+    ("Hotel Bella Vista", "Un hotel di lusso con vista panoramica sulla baia.", "Hotel", "Mare"),
+    ("Casa delle Montagne", "Una casa accogliente nelle Alpi con vista sulle montagne.", "Casa", "Montagna"),
+    ("Suite di lusso al centro", "Una suite elegante nel cuore della città.", "Suite", "Città"),
+    ("Appartamento sul mare", "Un appartamento affacciato sulla spiaggia di sabbia bianca.", "Appartamento", "Mare"),
+    ("Chalet di montagna", "Un accogliente chalet di legno nelle montagne.", "Casa", "Montagna"),
+    ("Hotel Elegante", "Un hotel di lusso nel centro della città.", "Hotel", "Città"),
+    ("Suite vista mare", "Una suite di lusso con vista panoramica sul mare.", "Suite", "Mare"),
+    ("Appartamento nel centro storico", "Un appartamento nel cuore della città antica.", "Appartamento", "Città"),
+    ("Villa tranquilla", "Una villa spaziosa con giardino, perfetta per una vacanza rilassante.", "Casa", "Città"),
+    ("Resort sulla spiaggia", "Un resort a cinque stelle direttamente sulla spiaggia.", "Hotel", "Mare"),
+    ("Appartamento moderno", "Un appartamento moderno con una vista panoramica sulla città.", "Appartamento", "Città"),
+    ("Chalet di montagna accogliente", "Un chalet di montagna con camino per una fuga invernale.", "Casa", "Montagna"),
+    ("Suite di lusso con jacuzzi", "Una suite di lusso con jacuzzi privata.", "Suite", "Città"),
+    ("Appartamento vista mare", "Un appartamento con vista sul mare e accesso diretto alla spiaggia.", "Appartamento", "Mare"),
+    ("Hotel nel centro storico", "Un affascinante hotel nel cuore del centro storico.", "Hotel", "Città"),
+    ("Villa sulle colline", "Una villa con piscina immersa nelle colline toscane.", "Casa", "Campagna")
+]
+
+viaggi = [
+    ("Rilassati al Mare", "Goditi una vacanza rilassante al mare con spiagge di sabbia dorata e acque cristalline.", "mare"),
+    ("Esplora una Città Vibrante", "Scopri una città piena di vita, con monumenti storici, ristoranti gourmet e vita notturna vivace.", "città"),
+    ("Avventura in Montagna", "Fai trekking tra le montagne, respira l'aria fresca e ammira panorami mozzafiato.", "montagna"),
+    ("Vacanza Culturale", "Immergiti nella cultura locale con visite a musei, gallerie d'arte e siti storici.", "città"),
+    ("Rilassamento al Mare", "Trascorri giornate di puro relax sulla spiaggia e rilassati in resort di lusso.", "mare"),
+    ("Esplorazione Urbana", "Passeggia per le strade affollate, assapora la cucina locale e scopri segreti nascosti della città.", "città"),
+    ("Escursioni in Montagna", "Affronta escursioni impegnative e conquista le vette più alte.", "montagna"),
+    ("Viaggio Enogastronomico", "Delizia il tuo palato con prelibatezze locali e degusta vini pregiati.", "città"),
+    ("Divertimento in Spiaggia", "Partecipa a sport acquatici, feste in spiaggia e attività all'aperto.", "mare"),
+    ("Arte e Cultura Urbana", "Esplora gallerie d'arte contemporanea, teatri e quartieri culturali.", "città"),
+    ("Relax Costiero", "Goditi il suono delle onde e le brezze marine in un tranquillo rifugio sulla costa.", "mare"),
+    ("Esplorazione Storica", "Scopri la storia antica della regione visitando siti archeologici e castelli medievali.", "città"),
+    ("Sfide in Montagna", "Affronta percorsi avventurosi, arrampicate su roccia e gite in bicicletta in montagna.", "montagna"),
+    ("Viaggio Gastronomico", "Assaggia la cucina locale attraverso tour culinari guidati e lezioni di cucina.", "città"),
+    ("Spiaggia e Sport Acquatici", "Pratica sport acquatici come il surf, il nuoto e il kayak nelle acque cristalline.", "mare"),
+    ("Vita Notturna Cittadina", "Esperienza notti indimenticabili con club, bar e spettacoli in città.", "città"),
+    ("Percorsi Panoramici in Montagna", "Segui percorsi panoramici tra valli e cime montane mozzafiato.", "montagna"),
+    ("Esperienza Teatrale", "Assisti a spettacoli teatrali, concerti e opere d'arte in città culturali.", "città"),
+    ("Soggiorno di Lusso in Riva al Mare", "Vivi in ​​un resort di lusso con servizio personalizzato a due passi dalla spiaggia.", "mare"),
+    ("Esplorazione Architettonica", "Ammira l'architettura unica delle città con edifici storici e moderni.", "città"),
+    ("Ski e Neve", "Scia sulle piste innevate e rilassati in accoglienti chalet di montagna.", "montagna"),
+    ("Cultura e Musica", "Immergiti nella scena musicale e culturale della città con concerti e festival.", "città"),
+    ("Resort All-Inclusive", "Goditi un soggiorno senza pensieri in un resort all-inclusive con tutte le comodità.", "mare"),
+    ("Tour Enologici", "Esplora le cantine locali e degusta i migliori vini e prodotti tipici della regione.", "città"),
+    ("Avventure Subacquee", "Scopri il mondo sottomarino con immersioni subacquee e snorkeling.", "mare"),
+    ("Arte Moderna e Contemporanea", "Visita musei d'arte moderna e contemporanea nelle città d'avanguardia.", "città"),
+    ("Relax Termale in Montagna", "Rilassati nelle sorgenti termali naturali in un ambiente di montagna sereno.", "montagna"),
+    ("Scoperta Storica e Religiosa", "Esplora siti storici e luoghi di culto in città ricche di storia.", "città"),
+    ("Spiaggia e Yoga", "Rigenera corpo e mente con lezioni di yoga sulla spiaggia al sorgere del sole.", "mare"),
+    ("Avventura in Montagna Estiva", "Esplora le montagne durante l'estate con escursioni e sport all'aperto.", "montagna"),
+]
+
+
 lista_agenzie = [
     Agenzia(random.choice(lista_città).id) for i in range(0,numeroAgenzie)
 ]
 lista_agenzie = list(set(lista_agenzie))
 
 lista_descrizioni_pacchetti = [
-    Descrizione(i,"","pacchetto") for i in range(0,(numeroPacchetti))
+    Descrizione(0, titolo, testo, "", luogo) for  titolo, testo, luogo in viaggi
 ]
-lista_descrizioni_pacchetti = list(set(lista_descrizioni_pacchetti))
+
+lista_descrizioni_alloggi = [
+    Descrizione(0, titolo,testo,tipologia, luogo) for titolo, testo, tipologia, luogo in alloggi
+]
+
 for _,x in enumerate(lista_descrizioni_pacchetti):
     x.id = _
 
-lista_descrizioni_alloggi = [
-    Descrizione(i,"","") for i in range(len(lista_descrizioni_pacchetti),(numeroAlloggi+len(lista_descrizioni_pacchetti)))
-]
+for _,x in enumerate(lista_descrizioni_alloggi):
+    x.id = _ + len(lista_descrizioni_pacchetti) 
 
 lista_alloggi = [
     Alloggio(
         random.choice(lista_città).id,
-        random.choice(lista_descrizioni_alloggi).id
-    ) for i in range(0,numeroAlloggi)
+        lista_descrizioni_alloggi[i].id
+    ) for i in range(0,len(lista_descrizioni_alloggi)-1)
 ]
 lista_alloggi = list(set(lista_alloggi))
+
+def random_pair(luogo, lista_descrizioni_p):
+    filtrati = []
+    for x in lista_descrizioni_p:
+        if x.luogo.upper() == luogo.upper():
+            filtrati.append(x)
+
+    return random.choice(filtrati)
+
+def search_descrizione(id):
+    for x in lista_descrizioni_alloggi:
+        if x.id == id:
+            return x
 
 # Generazione dati e relazioni 
 print("Generazione dati e relazioni")
@@ -733,7 +808,7 @@ for i in range(0,numeroPacchetti):
         i,
         random.choice(lista_agenzie).email,
         random.choice(lista_polizze).id,
-        random.choice(lista_descrizioni_pacchetti).id,
+        random_pair(search_descrizione(alloggio.id_descrizione).luogo, lista_descrizioni_pacchetti).id,
         alloggio.id_città,
         alloggio.nome
     ))
@@ -772,7 +847,7 @@ for j in range(0,n_acquisti):
         continue
     
 
-    
+    target.disponibilità_exec -= 1
     t_partenza = datetime.combine(target.dataPartenza, fake.time_object())
     delta = timedelta(hours=random.randint(1,10))
     t_arrivo = t_partenza + delta
@@ -802,7 +877,9 @@ for j in range(0,n_acquisti):
             partenza_aeroporto.codice,
             t_partenza,
             t_arrivo,
-            bagagli
+            bagagli,
+            volo_andata.prezzo,
+            volo_andata.tipologia
         )
 
     voli_counter += 1

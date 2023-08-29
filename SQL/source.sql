@@ -24,7 +24,7 @@ CREATE TYPE genere AS ENUM(
 );
 
 CREATE TABLE Dati_Cliente(   
-    Email varchar(40) PRIMARY KEY,
+    Email_cliente varchar(40) PRIMARY KEY,
     Nome varchar(30) NOT NULL,
     Cognome varchar(30) NOT NULL,
     Data_Nascita date NOT NULL,
@@ -39,7 +39,7 @@ CREATE TABLE Cliente(
     CHECK (
         LENGTH(PASSWORD) BETWEEN 8 AND 24
     ),
-    FOREIGN KEY(email) REFERENCES Dati_Cliente(email) ON
+    FOREIGN KEY(email) REFERENCES Dati_Cliente(email_cliente) ON
     DELETE
         CASCADE ON
         UPDATE
@@ -206,7 +206,7 @@ CREATE TABLE Pacchetto_Viaggio(
         2
     ) NOT NULL,
     Numero_Persone numeric(2,0) NOT NULL,
-    Disponibilità numeric(2,0) NOT NULL,
+    Disponibilita numeric(2,0) NOT NULL,
     Data_Partenza date NOT NULL,
     Data_Ritorno date NOT NULL,
     email_Agenzia varchar(40) NOT NULL,
@@ -241,7 +241,7 @@ CREATE TABLE Pacchetto_Viaggio(
                                 UPDATE
                                     CASCADE,
                                     CHECK (
-                                        Disponibilità >= 1
+                                        Disponibilita >= 1
                                             AND Numero_Persone >= 1 and
                                             Prezzo >= 0 AND
                                             Data_Partenza < Data_Ritorno 
@@ -351,7 +351,7 @@ CREATE TABLE Recensione(
     Motivazione varchar(350),
     email_Cliente varchar(40) NOT NULL,
     Data date NOT NULL,
-    ID_citta integer NOT NULL,
+    ID_citta_alloggio integer NOT NULL,
     Nome_Alloggio varchar(40) NOT NULL,
     PRIMARY KEY(ID),
     FOREIGN KEY(email_Cliente) REFERENCES Cliente(email) ON
@@ -360,7 +360,7 @@ CREATE TABLE Recensione(
         UPDATE
             CASCADE,
             FOREIGN KEY(
-                ID_citta,
+                ID_citta_alloggio,
                 Nome_Alloggio
             ) REFERENCES Alloggio(
                 ID_citta,
