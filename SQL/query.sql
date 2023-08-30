@@ -1,7 +1,7 @@
--- Trovare tutti i clienti riportando: Nome, Cognome e email, che hanno effettuato almeno una recensione con un voto
--- superiore o uguale a x stelle, e specificarne il nome dell'alloggio per cui è stata scritta la recensione, il giudizio 
--- dato e la motivazione se disponibile, nel caso tale informazione non fosse disponibile sostituire NULL con la stringa
--- '* Nessuna motivazione fornita'. Per l'esempio x = 3
+-- Trovare tutti i clienti che hanno effettuato almeno una recensione con un voto
+-- superiore o uguale a x stelle, riportare il loro: nome, cognome e l'email, e specificare il nome dell'alloggio per cui 
+-- è stata scritta la recensione, il giudizio dato e la motivazione se disponibile, nel caso tale informazione non fosse
+-- disponibile sostituire NULL con la stringa: '* Nessuna motivazione fornita'. Per l'esempio x = 3
 
 SELECT D.NOME, D.COGNOME, A.NOME, R.GIUDIZIO, COALESCE(R.MOTIVAZIONE,'* Nessuna motivazione fornita') AS MOTIVAZIONE
   FROM DATI_CLIENTE AS D JOIN CLIENTE AS C ON D.EMAIL_CLIENTE = C.EMAIL
@@ -11,8 +11,8 @@ SELECT D.NOME, D.COGNOME, A.NOME, R.GIUDIZIO, COALESCE(R.MOTIVAZIONE,'* Nessuna 
  
  
 -- Per ciascuna compagnia aerea fornire: il nome della compagnia, il numero di prenotazioni, il numero totale di voli
--- che sono stati prenotati compagnia aerea, la media prezzi dei voli offerti, il prezzo massimo devi voli offerti
--- finora, e il prezzo minimo dei voli offerto finora. Filtrare la ricerca in modo da mostrare solo le compagnia con
+-- che sono stati prenotati compagnia aerea, la media prezzi dei voli offerti, il prezzo massimo devi voli offerti,
+-- e il prezzo minimo dei voli offerto. Filtrare la ricerca in modo da mostrare solo le compagnia con
 -- almeno x voli. In fine si riordini in modo decrescente per numero voli. Esempio: x = 10
 
 SELECT C.NOME AS NOME_COMPAGNIA,
@@ -167,11 +167,11 @@ SELECT D.TITOLO,
  
 
 -- Si trovi tutti i voli da una aeroporto x ad un aeroporto y che attraverso gli scali costano meno del
--- viaggio diretto. Di ogni volo con scalo si riporti solo il codice del volo di partenza, la data/ora,
+-- viaggio diretto. Di ogni volo con scalo si riporti solo il codice del volo di partenza, la data/ora di partenza,
 -- il codice del volo di arrivo, la data/ora di arrivo, il numero di scali, il prezzo contando tutti voli
 -- dello scalo, il risparmio (differenza totale con scali e senza scali), il tempo totale di viaggio (
 -- somma dei voli, senza contare le attese al terminale). Nota: il totale prezzo dei voli è per persona.
--- Nell'esempio: x.codice = 'EOCM' e y.codice = 'PQAS'
+-- Nell'esempio: x.codice = 'LQVF' e y.codice = 'YSEM'
 
 WITH RECURSIVE POSSIBILI_SCALI(
     PRIMO_VOLO, -- Tiene traccia della partenza
@@ -251,9 +251,10 @@ FROM
     VOLO AS V -- V Serve a ottenere le informazioni del primo volo di partenza
 WHERE
     DIRETTO.NUMERO_SCALI = 0
-    AND DIRETTO.AEROPORTO_PARTENZA = 'EOCM'
-    AND DIRETTO.AEROPORTO_ARRIVO = 'PQAS'
+    AND DIRETTO.AEROPORTO_PARTENZA = 'LQVF'
+    AND DIRETTO.AEROPORTO_ARRIVO = 'YSEM'
     AND DIRETTO.TOTALE_PREZZO > SCALI.TOTALE_PREZZO
     AND SCALI.NUMERO_SCALI > 0
     AND SCALI.AEROPORTO_ARRIVO = DIRETTO.AEROPORTO_ARRIVO
     AND SCALI.PRIMO_VOLO = V.CODICE;
+    
