@@ -4,7 +4,7 @@
 -- '* Nessuna motivazione fornita'. Per l'esempio x = 3
 
 SELECT D.NOME, D.COGNOME, A.NOME, R.GIUDIZIO,
-       COALESCE(R.MOTIVAZIONE,'* Nessuna motivazione fornita')
+       COALESCE(R.MOTIVAZIONE,'* Nessuna motivazione fornita') AS MOTIVAZIONE
   FROM DATI_CLIENTE AS D
   JOIN CLIENTE AS C
     ON D.EMAIL_CLIENTE = C.EMAIL
@@ -18,7 +18,8 @@ SELECT D.NOME, D.COGNOME, A.NOME, R.GIUDIZIO,
  
 -- Per ciascuna compagnia aerea fornire: il nome della compagnia, il numero di prenotazioni, il numero totale di voli
 -- che sono stati prenotati compagnia aerea, la media prezzi dei voli offerti, il prezzo massimo devi voli offerti
--- finora, e il prezzo minimo dei voli offerto finora. In fine si riordini in modo decrescente per numero voli.
+-- finora, e il prezzo minimo dei voli offerto finora. Filtrare la ricerca in modo da mostrare solo le compagnia con
+-- almeno x voli. In fine si riordini in modo decrescente per numero voli. Esempio: x = 10
 
 SELECT C.NOME AS NOME_COMPAGNIA,
        COUNT(V.CODICE) AS NUMERO_VOLI,
@@ -29,7 +30,7 @@ SELECT C.NOME AS NOME_COMPAGNIA,
   JOIN VOLO AS V
     ON C.EMAIL = V.EMAIL_COMPAGNIA
  GROUP BY C.NOME
-HAVING COUNT(V.CODICE) > 10
+HAVING COUNT(V.CODICE) >= 10
  ORDER BY NUMERO_VOLI DESC;
  
  
@@ -38,8 +39,8 @@ HAVING COUNT(V.CODICE) > 10
 
 SELECT AGENZIA.DENOMINAZIONE,
        NUMERO_OFFERTE.CONTEGGIO AS NUMERO_PACCHETTI,
-       MEDIA_PREZZI.MEDIA AS PREZZO_MEDIO,
-       MEDIA_REC.MEDIA as MEDIA_RECENSIONI
+       ROUND(MEDIA_PREZZI.MEDIA,2) AS PREZZO_MEDIO,
+       ROUND(MEDIA_REC.MEDIA,2) as MEDIA_RECENSIONI
   FROM
         (SELECT EMAIL_AGENZIA AS EMAIL,
                COUNT(*) AS CONTEGGIO
@@ -70,7 +71,7 @@ SELECT AGENZIA.DENOMINAZIONE,
    
 -- Dato un cliente. Per ogni acquisto recuperare: tutte le informazioni della transizione, il totale per il trasporto,
 -- il costo di base del pacchetto a persona, il numero di persone partecipanti e il numero di voli per quel viaggio.
--- Si includano inoltre gli utenti che non hanno prenotato il trasporto attraverso il servizio, e si riporti in quel
+-- Si includano inoltre anche i casi in cui non hanno prenotato il trasporto attraverso il servizio, e si riporti in quel
 -- caso il valore 0 sia per il totale trasporto che per il numero di voli.
 -- Cliente per l'esempio: Annibale.Boezio@fastmail.org.
  
@@ -125,8 +126,10 @@ SELECT DATI_PRENOTAZIONE.CODICE,
 -- Algoritmo per mostrare i pacchetti: fornita una data, cercare tutti i pacchetti viaggio che si svolgono dopo quella
 -- data. Eliminare i pacchetti che non sono più disponibili (perché già prenotati tutti) dai risultati. Riportare le
 -- seguenti informazioni essenziali: il titolo della descrizione del pacchetto, la data di partenza, la data di ritorno,
--- il prezzo, il numero di persone, il nome dell'alloggio e la destinazione.
--- Esempio con 11-04-2022. Ordinarli per data di partenza in ordine crescente.
+-- il prezzo, il numero di persone, il nome dell'alloggio e la destinazione. In fine si filtri i risultati lasciando
+-- tutti i pacchetti compresi dal prezzo in un intevervallo di prezzo. Ordinarli per data di partenza in ordine crescente.
+-- Esempio con 11-04-2022, intrevallo prezzo [300, 1000].
+-- TODO: attenzione empty
  
 SELECT D.TITOLO, 
        DISPONIBILI.PREZZO, 
@@ -134,7 +137,7 @@ SELECT D.TITOLO,
        DISPONIBILI.DATA_PARTENZA, 
        DISPONIBILI.DATA_RITORNO, 
        DISPONIBILI.NOME_ALLOGGIO, 
-       C.NOME, 
+       C.NOME AS NOME_CITTA, 
        C.STATO
 
   FROM 
@@ -164,6 +167,8 @@ SELECT D.TITOLO,
        
  WHERE D.ID = DISPONIBILI.ID_DESCRIZIONE
    AND C.ID = DISPONIBILI.ID_CITTA_ALLOGGIO
+   AND DISPONIBILI.PREZZO > 300
+   AND DISPONIBILI.PREZZO < 1000
  ORDER BY DISPONIBILI.DATA_PARTENZA;
  
 
@@ -235,14 +240,14 @@ WITH RECURSIVE POSSIBILI_SCALI(
     )
 ) -- Nota: tra le tuple di possibili_scali ci sono anche i voli diretti
 SELECT
-    DIRETTO.PRIMO_VOLO AS DIRETTO_CODICE,
-    DIRETTO.TIMESTAMP_PARTENZA AS DIRETTO_PARTENZA,
-    DIRETTO.TIMESTAMP_ARRIVO AS DIRETTO_ARRIVO,
-    DIRETTO.TOTALE_PREZZO AS DIRETTO_PREZZO,
-    SCALI.PRIMO_VOLO AS SCALO_PARTENZA_CODICE,
-    SCALI.VOLO_ATTUALE AS SCALO_ARRIVO_CODICE,
-    V.TIMESTAMP_PARTENZA AS SCALO_PARTENZA,
-    SCALI.TIMESTAMP_ARRIVO AS SCALO_ARRIVO,
+    DIRETTO.PRIMO_VOLO AS DIRETTO,
+    DIRETTO.TIMESTAMP_PARTENZA AS D_PARTENZA,
+    DIRETTO.TIMESTAMP_ARRIVO AS D_ARRIVO,
+    DIRETTO.TOTALE_PREZZO AS D_PREZZO,
+    SCALI.PRIMO_VOLO AS S_PARTENZA_CODICE,
+    SCALI.VOLO_ATTUALE AS S_ARRIVO_CODICE,
+    V.TIMESTAMP_PARTENZA AS S_PARTENZA,
+    SCALI.TIMESTAMP_ARRIVO AS S_ARRIVO,
     SCALI.NUMERO_SCALI,
     SCALI.TOTALE_PREZZO AS SCALO_PREZZO,
     SCALI.DURATA_TOTALE_VIAGGIO
