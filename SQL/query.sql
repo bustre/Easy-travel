@@ -3,16 +3,10 @@
 -- dato e la motivazione se disponibile, nel caso tale informazione non fosse disponibile sostituire NULL con la stringa
 -- '* Nessuna motivazione fornita'. Per l'esempio x = 3
 
-SELECT D.NOME, D.COGNOME, A.NOME, R.GIUDIZIO,
-       COALESCE(R.MOTIVAZIONE,'* Nessuna motivazione fornita') AS MOTIVAZIONE
-  FROM DATI_CLIENTE AS D
-  JOIN CLIENTE AS C
-    ON D.EMAIL_CLIENTE = C.EMAIL
-  JOIN RECENSIONE AS R
-    ON C.EMAIL = R.EMAIL_CLIENTE
-  JOIN ALLOGGIO AS A
-    ON R.ID_CITTA_ALLOGGIO = A.ID_CITTA
-   AND R.NOME_ALLOGGIO = A.NOME
+SELECT D.NOME, D.COGNOME, A.NOME, R.GIUDIZIO, COALESCE(R.MOTIVAZIONE,'* Nessuna motivazione fornita') AS MOTIVAZIONE
+  FROM DATI_CLIENTE AS D JOIN CLIENTE AS C ON D.EMAIL_CLIENTE = C.EMAIL
+  JOIN RECENSIONE AS R ON C.EMAIL = R.EMAIL_CLIENTE
+  JOIN ALLOGGIO AS A ON R.ID_CITTA_ALLOGGIO = A.ID_CITTA AND R.NOME_ALLOGGIO = A.NOME
  WHERE GIUDIZIO >= 3;
  
  
@@ -126,10 +120,10 @@ SELECT DATI_PRENOTAZIONE.CODICE,
 -- Algoritmo per mostrare i pacchetti: fornita una data, cercare tutti i pacchetti viaggio che si svolgono dopo quella
 -- data. Eliminare i pacchetti che non sono più disponibili (perché già prenotati tutti) dai risultati. Riportare le
 -- seguenti informazioni essenziali: il titolo della descrizione del pacchetto, la data di partenza, la data di ritorno,
--- il prezzo, il numero di persone, il nome dell'alloggio e la destinazione. In fine si filtri i risultati lasciando
+-- il prezzo, il numero di persone, il nome dell'alloggio, la destinazione e la polizza. In fine si filtri i risultati lasciando
 -- tutti i pacchetti compresi dal prezzo in un intevervallo di prezzo. Ordinarli per data di partenza in ordine crescente.
--- Esempio con 11-04-2022, intrevallo prezzo [300, 1000].
--- TODO: attenzione empty
+-- Esempio con la data 2019-10-11, intrevallo prezzo [300, 1000].
+ 
  
 SELECT D.TITOLO, 
        DISPONIBILI.PREZZO, 

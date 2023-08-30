@@ -375,3 +375,5 @@ CREATE TABLE Recensione(
                             AND Giudizio <= 5
                     )
 );
+
+CREATE INDEX IDX_PXALLOGGI ON PACCHETTO_VIAGGIO(ID, ID_DESCRIZIONE, ID_CITTA_ALLOGGIO, NOME_ALLOGGIO);
