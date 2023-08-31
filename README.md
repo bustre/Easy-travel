@@ -33,11 +33,11 @@
     - [x] Schema relazionale + vincoli esprimibili
     - [x] Regole aziendali
 - ### Requisiti progetto
-    - [] Implementazione DB
-    - [] Inserire dati (generare la maggior parte con faker + cvs import)
-    - [] Querry SQL
-    - [] Indice
-    - [] Software C++
+    - [x] Implementazione DB
+    - [x] Inserire dati (generare la maggior parte con faker + cvs import)
+    - [x] Querry SQL
+    - [x] Indice
+    - [x] Software C++
 - ### Cose in più (se possibile)
     - [] Transizioni 
     - [] Trigger
